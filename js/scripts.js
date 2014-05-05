@@ -75,11 +75,11 @@ var rankings = {
 
 $(document).ready(function() {
     
-    $.getJSON("RankingMarijuana.json", function(data) {rnkMj = data;});
+    $.getJSON("json/RankingMarijuana.json", function(data) {rnkMj = data;});
     
-    $.getJSON("cocaine.json", function (data) { cocaine = data;});
-    $.getJSON("ganja.json", function (data) { marijuana = data;});
-    $.getJSON("basemap.json", function (data) { base = data; showDrugs();});
+    $.getJSON("json/cocaine.json", function (data) { cocaine = data;});
+    $.getJSON("json/ganja.json", function (data) { marijuana = data;});
+    $.getJSON("json/basemap.json", function (data) { base = data; showDrugs();});
     
 });
 
