@@ -1,0 +1,57 @@
+#menu
+{
+	text-align: center;
+}
+
+#left
+{
+	width:100px;
+	background-color: black;
+}
+
+#bottomchart
+{
+	width: 400px;
+	height: 200px;
+}
+
+#popup 
+{
+	z-index: 10;
+	background-color: rgba(0,0,0,.5);
+	width:200px;
+	height:100px;
+	position: absolute;
+	border-radius: 5px;
+
+}
+
+.menuItem
+{
+	display:inline-block;
+}
+
+.menuSection
+{
+	min-height: 40px;
+	min-width: 40px;
+	border-radius: 25px;
+	background-color: black;
+	border: solid 2px silver;
+}
+
+.pathItem 
+{
+	height:40px;
+	min-width: 250px;
+}
+
+.highcharts-tooltip>span {
+	padding: 10px;
+	white-space: normal !important;
+	width: 200px;
+}
+
+.f32 .flag {
+	vertical-align: middle !important;
+}

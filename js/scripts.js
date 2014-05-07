@@ -1,5 +1,6 @@
-var base,cocaine, marijuana, meth, rnkMj;
+var base,cocaine, marijuana, meth, heroin,rnkMj,rnkHer,rnkMeth,rnkCoke;
 
+var countryRankings ={};
 var rankings = {
     "cocaine": {
         "countries": ["Peru",
@@ -70,25 +71,86 @@ var rankings = {
                     52961],
         "rankings":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 
+    },
+    "heroin":{
+        "countries":["Iran",
+                        "Turkey",
+                        "Pakistan",
+                        "Afghanistan",
+                        "China",
+                        "United States",
+                        "Russian Federation",
+                        "United Kingdom",
+                        "Australia",
+                        "India",
+                        "Italy",
+                        "Malaysia",
+                        "Netherlands",
+                        "France",
+                        "Mexico",
+                        "Vietnam",
+                        "Uzbekistan",
+                        "Thailand",
+                        "Colombia",
+                        "Tajikistan"],  
+        "values":[23100,
+                    13301,
+                    12631,
+                    11000,
+                    7288,
+                    5484,
+                    2177,
+                    1968,
+                    1090,
+                    1033,
+                    951,
+                    756,
+                    751,
+                    701,
+                    697,
+                    692,
+                    623,
+                    540,
+                    523,
+                    516],
+        "rankings":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+    },
+    "meth":{
+        "countries":[],
+        "values":[],
+        "rankings":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
     }
 }
 
+
 $(document).ready(function() {
-    
-    $.getJSON("json/RankingMarijuana.json", function(data) {rnkMj = data;});
-    
-    $.getJSON("json/cocaine.json", function (data) { cocaine = data;});
-    $.getJSON("json/ganja.json", function (data) { marijuana = data;});
-    $.getJSON("json/basemap.json", function (data) { base = data; showDrugs();});
-    
+    $.getJSON("json/RankingMarijuana.json", function(data) {countryRankings['marijuana'] = data;});
+    $.getJSON("json/RankingHeroin.json", function(data) {countryRankings['heroin'] = data;});
+    $.getJSON("json/RankingMeth.json", function(data) {countryRankings['meth'] = data; });
+    $.getJSON("json/RankingCocaine.json", function(data) {countryRankings['cocaine'] = data; });
+
+    $.getJSON("json/cocaine.json", function (data) { cocaine = getValidCountries(data);});
+    $.getJSON("json/ganja.json", function (data) { marijuana = getValidCountries(data);});
+    $.getJSON("json/heroin.json", function (data) { heroin = getValidCountries(data);});
+    $.getJSON("json/meth.json", function (data) { meth = getValidCountries(data);});
+    $.getJSON("json/basemap.json", function (data) { base = data; showDrugs();});  
+
+
+    setTimeout(function(){
+        console.log(countryRankings);
+    },1000);
 });
+
 
 function getValidCountries(data)
 {
-    var res = {};
-    console.log(data);
-
-
+    var res = [];
+    $.each(data,function(index,value) {
+        if(value.value >1)
+            res.push(value);
+        //console.log(value.code+","+value.name+","+value.value+",");
+    })
+    return res;
 }
 
 function showDrugs(type) 
@@ -115,6 +177,22 @@ function showDrugs(type)
             ranking = rnkMj;
             break;
 
+        case 3:
+            file = meth;
+            color = "#488AC7";
+            title = "Methamphetamine";
+            drawRanking(title,rankings.meth.countries,rankings.meth.values);
+            ranking = rnkMj;
+            break;
+
+        case 4:
+            file = heroin;
+            color = "#488AC7";
+            title = "Heroine";
+            drawRanking(title,rankings.heroin.countries,rankings.heroin.values);
+            ranking = rnkMj;
+            break;
+
         default:
             file = base;
             color = "#488AC7";
@@ -126,7 +204,7 @@ function showDrugs(type)
 
 function drawRanking(title,countries,values)
 {
-    $('#sidechart').css('width','300px');
+    
     $('#sidechart').highcharts({
         chart: {
             type: 'bar'
@@ -141,7 +219,7 @@ function drawRanking(title,countries,values)
             }
         },
         yAxis: {
-            min: 0,
+            min: 0
             // labels: {
             //     overflow: 'justify'
             // }
@@ -173,32 +251,59 @@ function drawRanking(title,countries,values)
         },
         series: [{
             name: title,
-            data: values
-            }]
+            data: values,
+            events: {
+                click: function(event) {
+                    console.log(event.point.code);
+                    drawBottomGraph(event.point.code, event.point.name);
+                    getRankings(event.point.code);
+                }
+            }
+        }]
     });
 }
 
 function getDrugs(code)
 {
     var values = [];
+    
     $.each(marijuana, function(index,value){
         if(value.code == code)
             values.push(value.value);
         //console.log(value.name+","+value.code+","+value.value+",");
     })
+    
+    $.each(cocaine, function(index,value){
+        if(value.code == code)
+            values.push(value.value);
+    })
 
-     $.each(cocaine, function(index,value){
+    $.each(heroin, function(index,value){
         if(value.code == code)
             values.push(value.value);
     })
     return values;
 }
+
+function getRankings(code)
+{
+    var ranks=[], rnk;
+    $.each(countryRankings, function(i,val){
+        rnk ='NA';
+        $.each(val, function(index,value){
+            if(value.code == code)
+                rnk = value.rank;
+        })
+        ranks.push(rnk);
+    })
+
+    console.log(ranks);
+}
     
 
-function drawSideGraph(code, country)
+function drawBottomGraph(code, country)
 {
-    $('#sidechart').css('width','200px');
-    $('#sidechart').highcharts({
+    $('#bottomchart').highcharts({
         chart: {
             type: 'column'
         },
@@ -208,13 +313,15 @@ function drawSideGraph(code, country)
         xAxis: {
             categories: [
                 'Marijuana',
-                'Cocaine'
+                'Cocaine',
+                'Heroin'
             ]
         },
         yAxis: {
-            min: 0,
-            // max: 10000,
-            // type: 'logarithmic',
+            min: 1,
+            max: 100000000,
+            tickInterval: 1,
+            type: 'logarithmic',
             title: {
                 text: 'kilograms'
             }
@@ -226,13 +333,36 @@ function drawSideGraph(code, country)
                 borderWidth: 0
             }
         },
+        credits: {
+            enabled: false
+        },
         series: [{
                 name: country,
                 data: getDrugs(code)
             }]
     });
-
 }
+
+function zoom(code)
+{
+    $('#container').highcharts2().mapZoom();
+    setTimeout(function() { $('#container').highcharts2().get(code).zoomTo();},800);
+    
+}
+
+function zoomBorder()
+{
+    $('#container').highcharts2().get('MX').zoomTo();
+    setTimeout(function() {$('#container').highcharts2().mapZoom(.8)},400);
+    // $('#container').highcharts2().get(code).zoomTo();
+}
+
+
+// function getToolTipRankings(values)
+// {
+//     var str = '<table><tr><td>Marijuana</td><td>Heroin</td><td>Meth</td><td>Cocaine</td></tr><tr><td>'+values[0]+'</td><td>'+values[1]+'</td><td>'+values[2]+'</td><td>'+values[3]+'</td></tr></table>'
+//         return str;
+// }
 
 function drawMap(file, color, title)
 {
@@ -247,8 +377,11 @@ function drawMap(file, color, title)
     }
     else
        max=1; 
-    
-    console.log('Max: '+max)
+
+    $.each(file, function(){
+        this.flag = this.code.toLowerCase();
+        this.id = this.code;
+    })
     // Initiate the chart
     $('#container').highcharts2('Map', {
         
@@ -262,13 +395,15 @@ function drawMap(file, color, title)
                 verticalAlign: 'bottom'
             }
         },
+        credits: {
+            enabled: false
+        },
         exporting: { enabled: false },
         colorAxis: {
             min: 1,
             max: max,
             type: 'linear'
         },
-
         series : [{
             data : file,
             mapData: Highcharts2.maps.world,
@@ -281,12 +416,23 @@ function drawMap(file, color, title)
                 }
             },
             tooltip: {
-                valueSuffix: ' kgs'
+                backgroundColor: 'none',
+                borderWidth: 0,
+                shadow: false,
+                useHTML: true,
+                padding: 0,
+                pointFormat: '<span class="f32"><span class="flag {point.flag}"></span></span>'
+                    + ' {point.name}: <b>{point.value}</b> kgs',
+                positioner: function () {
+                    return { x: 0, y: 250 }
+                }
             },
             events: {
             	click: function(event) {
             		console.log(event.point);
-                    drawSideGraph(event.point.code, event.point.name);
+                    drawBottomGraph(event.point.code, event.point.name);
+                    getRankings(event.point.code);
+
             	}
             }
 
@@ -294,3 +440,56 @@ function drawMap(file, color, title)
 
     });
 }
+
+function resize()
+{
+    $('#container svg').animate({
+        height:'200px'
+    }, 2000,function(){})
+}
+
+function showPopup()
+{
+    //console.log((Math.random() * 600) + 1);
+    var x = ((Math.random() * 600) +1);
+    var y = ((Math.random() * 400) +1);
+    
+    $('#popup').animate({
+        left:100+x+"px",
+        top: y+"px",
+    },400, function(){});
+}
+
+
+
+/******************* D3 Transitions ***********************/
+
+var line = d3.svg.line().interpolate("linear");
+
+function nextSection(sect,time)
+{
+    var path = d3.select('#menuPath'+sect).style('background-color','white').append('svg')
+                    .attr({
+                        'width':'100%',
+                        'height':'100%'
+                    });
+
+    path.append("rect")
+            .attr({
+                'x':0,
+                'y':14,
+                'width':1,
+                'height':11,
+                'fill':'teal'
+            })
+            .transition()
+            .attr('width',250)
+            .duration(time);
+    console.log(path);
+
+}
+
+
+
+
+
