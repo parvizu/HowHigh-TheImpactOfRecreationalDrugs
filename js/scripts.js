@@ -126,6 +126,7 @@ var rankings = {
 var crimeRankings ={
     'overall': {
         'countries':[
+            "United States",
             "United Kingdom",
             "France",
             "Canada",
@@ -144,10 +145,10 @@ var crimeRankings ={
             "Chile",
             "Croatia",
             "Hungary",
-            "Israel",
-            "Kenya"
+            "Israel"
         ],
         'values':[
+            1552432,
             214754,
             139483,
             93914,
@@ -166,8 +167,7 @@ var crimeRankings ={
             6565,
             5004,
             4558,
-            4355,
-            4146
+            4355
         ]
     },
     'use': {
@@ -280,8 +280,10 @@ $(document).ready(function() {
     $.getJSON("json/crimes.json", function (data) { crime = data;}); 
     $.getJSON("json/countryCrimesTrafficking.json", function (data) {  crimeTraffick= data;}); 
     $.getJSON("json/countryCrimesUse.json", function (data) { crimeUse = data;}); 
-    $.getJSON("json/countryCrimesTotal.json", function (data) { crimeTotal = data;}); 
-
+    $.getJSON("json/countryCrimesTotal.json", function (data) { crimeTotal = getValidCountries(data);}); 
+    $.getJSON("json/countrySeizuresTotal.json", function (data) { seizuresTotal = getValidCountries(data);}); 
+    $.getJSON("json/usStateProduction.json", function (data) {usMarijuana = data;usProduction(data);});
+    
     //movePopup(300,200,500,300,'Please select the mode you want to use:<br><a href="" onclick="start(); showDrugs(1);  return false;">Directed</a> | <a href="" onclick="">Exploratory</a>',800);
     //$('#popup').fadeIn(1500); 
 });
@@ -424,6 +426,7 @@ function showDrugs(type)
     }
 
     drawMap(file,color,title);
+    drawScatter();
     
 }
 
@@ -568,6 +571,142 @@ function drawBottomGraph(code, country)
             }]
     });
 }
+
+/***** US Production *******/
+function usProduction(data) {
+    // Instantiate the map
+    $('#usMap').highcharts2('Map', {
+        title : {
+            text : 'US Drug Production by State'
+        },
+
+        mapNavigation: {
+            enabled: true,
+            buttonOptions: {
+                verticalAlign: 'bottom'
+            }
+        },
+
+        colorAxis: {
+            min: 1,
+            type: 'logarithmic',
+            minColor: '#E6E7E8',
+            maxColor: '#005645'
+        },            
+
+        plotOptions: {
+            map: {
+                states: {
+                    hover: {
+                        color: '#EEDD66'
+                    }
+                }
+            }
+        },            
+        series : [{
+            animation: true,
+            data : data,
+            mapData: Highcharts2.maps.us,
+            joinBy: 'code',
+            dataLabels: {
+                enabled: true,
+                color: 'white',
+                format: '{point.code}',
+                style: {
+                    fontWeight: 'bold',
+                    textShadow: '0 0 3px black',
+                    textTransform: 'uppercase'
+                }
+            },
+            name: 'Production:',
+            tooltip: {
+                pointFormat: '{point.state}: {point.value}/kgs'
+            }
+        }]
+    });
+};
+
+/***** MAP ZOOMING ******/
+function drawScatter() {
+    var values = [];
+    // var news = [];
+    // console.log(crimeTotal);
+    // console.log(seizuresTotal);
+    $.each(crimeTotal, function(index,value1){
+        $.each(seizuresTotal, function (index,value2){
+            if(value1.code == value2.code) {
+                values.push({
+                    // code:value1.code,
+                    name:value1.name,
+                    data: [[value1.value, value2.value]]
+                    // crimes: value1.value,
+                    // seizures: value2.value
+                });
+                // news.push([value1.value, value2.value]);
+            }
+        });
+    });
+    console.log(values);
+
+    $('#scatterChart').highcharts({
+        chart: {
+            type: 'scatter',
+            zoomType: 'xy'
+        },
+        title: {
+            text: 'Crimes Versus Seizures'
+        },
+        xAxis: {
+            type: 'logarithmic',
+            title: {
+                enabled: true,
+                text: 'Total Crimes'
+            },
+            startOnTick: true,
+            endOnTick: true,
+            showLastLabel: true
+        },
+        yAxis: {
+            type: 'logarithmic',
+            title: {
+                text: 'Total Seizures'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            scatter: {
+                marker: {
+                    radius: 5,
+                    symbol: 'circle',
+                    fillColor: '#FFFFFF',
+                    lineWidth: 1,
+                    lineColor: 'rgba(223, 83, 83, .5)',
+                    states: {
+                        hover: {
+                            enabled: true,
+                            lineColor: 'rgb(100,100,100)'
+                        }
+                    }
+                },
+                states: {
+                    hover: {
+                        marker: {
+                            enabled: false
+                        }
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<b>{series.name}</b><br>',
+                    pointFormat: '{point.x} crimes, {point.y} seizures'
+                }
+            }
+        },
+        series: values
+    });    
+}
+
 
 /***** MAP ZOOMING *******/
 
