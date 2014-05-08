@@ -11,7 +11,7 @@
 	},
 	{
 		"code": "DZ",
-		"value": 0,
+		"value": 9,
 		"name": "Algeria"
 	},
 	{
@@ -21,7 +21,7 @@
 	},
 	{
 		"code": "AD",
-		"value": 0,
+		"value": 1,
 		"name": "Andorra"
 	},
 	{
@@ -36,12 +36,12 @@
 	},
 	{
 		"code": "AR",
-		"value": 0,
+		"value": 18,
 		"name": "Argentina"
 	},
 	{
 		"code": "AM",
-		"value": 0,
+		"value": 1,
 		"name": "Armenia"
 	},
 	{
@@ -51,17 +51,17 @@
 	},
 	{
 		"code": "AU",
-		"value": 0,
+		"value": 2268,
 		"name": "Australia"
 	},
 	{
 		"code": "AT",
-		"value": 0,
+		"value": 4,
 		"name": "Austria"
 	},
 	{
 		"code": "AZ",
-		"value": 0,
+		"value": 13,
 		"name": "Azerbaijan"
 	},
 	{
@@ -71,12 +71,12 @@
 	},
 	{
 		"code": "BH",
-		"value": 0,
+		"value": 2,
 		"name": "Bahrain"
 	},
 	{
 		"code": "BD",
-		"value": 0,
+		"value": 37,
 		"name": "Bangladesh"
 	},
 	{
@@ -86,22 +86,22 @@
 	},
 	{
 		"code": "BY",
-		"value": 0,
+		"value": 6,
 		"name": "Belarus"
 	},
 	{
 		"code": "BE",
-		"value": 0,
+		"value": 4,
 		"name": "Belgium"
 	},
 	{
 		"code": "BZ",
-		"value": 0,
+		"value": 5,
 		"name": "Belize"
 	},
 	{
 		"code": "BJ",
-		"value": 0,
+		"value": 35,
 		"name": "Benin"
 	},
 	{
@@ -131,17 +131,17 @@
 	},
 	{
 		"code": "BR",
-		"value": 0,
+		"value": 48,
 		"name": "Brazil"
 	},
 	{
 		"code": "BN",
-		"value": 0,
+		"value": 10,
 		"name": "Brunei Darussalam"
 	},
 	{
 		"code": "BG",
-		"value": 0,
+		"value": 25,
 		"name": "Bulgaria"
 	},
 	{
@@ -156,7 +156,7 @@
 	},
 	{
 		"code": "KH",
-		"value": 0,
+		"value": 34,
 		"name": "Cambodia"
 	},
 	{
@@ -166,7 +166,7 @@
 	},
 	{
 		"code": "CA",
-		"value": 0,
+		"value": 204,
 		"name": "Canada"
 	},
 	{
@@ -196,7 +196,7 @@
 	},
 	{
 		"code": "CN",
-		"value": 0,
+		"value": 16165,
 		"name": "China"
 	},
 	{
@@ -246,17 +246,17 @@
 	},
 	{
 		"code": "CY",
-		"value": 0,
+		"value": 1,
 		"name": "Cyprus"
 	},
 	{
 		"code": "CZ",
-		"value": 0,
+		"value": 32,
 		"name": "Czech Republic"
 	},
 	{
 		"code": "DK",
-		"value": 0,
+		"value": 1,
 		"name": "Denmark"
 	},
 	{
@@ -286,7 +286,7 @@
 	},
 	{
 		"code": "SV",
-		"value": 0,
+		"value": 1,
 		"name": "El Salvador"
 	},
 	{
@@ -301,12 +301,12 @@
 	},
 	{
 		"code": "EE",
-		"value": 0,
+		"value": 29,
 		"name": "Estonia"
 	},
 	{
 		"code": "ET",
-		"value": 0,
+		"value": 6.3,
 		"name": "Ethiopia"
 	},
 	{
@@ -321,12 +321,12 @@
 	},
 	{
 		"code": "FI",
-		"value": 0,
+		"value": 15,
 		"name": "Finland"
 	},
 	{
 		"code": "FR",
-		"value": 0,
+		"value": 29,
 		"name": "France"
 	},
 	{
@@ -351,17 +351,17 @@
 	},
 	{
 		"code": "DE",
-		"value": 0,
+		"value": 76,
 		"name": "Germany"
 	},
 	{
 		"code": "GH",
-		"value": 0,
+		"value": 25,
 		"name": "Ghana"
 	},
 	{
 		"code": "GR",
-		"value": 0,
+		"value": 1,
 		"name": "Greece"
 	},
 	{
@@ -411,32 +411,32 @@
 	},
 	{
 		"code": "HK",
-		"value": 0,
+		"value": 50,
 		"name": "Hong Kong SAR, China"
 	},
 	{
 		"code": "HU",
-		"value": 0,
+		"value": 16,
 		"name": "Hungary"
 	},
 	{
 		"code": "IS",
-		"value": 0,
+		"value": 1,
 		"name": "Iceland"
 	},
 	{
 		"code": "IN",
-		"value": 0,
+		"value": 470,
 		"name": "India"
 	},
 	{
 		"code": "ID",
-		"value": 0,
+		"value": 2051,
 		"name": "Indonesia"
 	},
 	{
 		"code": "IR",
-		"value": 0,
+		"value": 3917,
 		"name": "Iran, Islamic Rep."
 	},
 	{
@@ -446,7 +446,7 @@
 	},
 	{
 		"code": "IE",
-		"value": 0,
+		"value": 2,
 		"name": "Ireland"
 	},
 	{
@@ -456,12 +456,12 @@
 	},
 	{
 		"code": "IL",
-		"value": 0,
+		"value": 67,
 		"name": "Israel"
 	},
 	{
 		"code": "IT",
-		"value": 0,
+		"value": 15,
 		"name": "Italy"
 	},
 	{
@@ -471,17 +471,17 @@
 	},
 	{
 		"code": "JP",
-		"value": 0,
+		"value": 467,
 		"name": "Japan"
 	},
 	{
 		"code": "JO",
-		"value": 0,
+		"value": 4,
 		"name": "Jordan"
 	},
 	{
 		"code": "KZ",
-		"value": 0,
+		"value": 1,
 		"name": "Kazakhstan"
 	},
 	{
@@ -501,7 +501,7 @@
 	},
 	{
 		"code": "KR",
-		"value": 0,
+		"value": 21,
 		"name": "Korea, Rep."
 	},
 	{
@@ -521,12 +521,12 @@
 	},
 	{
 		"code": "LA",
-		"value": 0,
+		"value": 11,
 		"name": "Lao PDR"
 	},
 	{
 		"code": "LV",
-		"value": 0,
+		"value": 53,
 		"name": "Latvia"
 	},
 	{
@@ -556,22 +556,22 @@
 	},
 	{
 		"code": "LT",
-		"value": 0,
+		"value": 134,
 		"name": "Lithuania"
 	},
 	{
 		"code": "LU",
-		"value": 0,
+		"value": 3,
 		"name": "Luxembourg"
 	},
 	{
 		"code": "MO",
-		"value": 0,
+		"value": 5,
 		"name": "Macao SAR, China"
 	},
 	{
 		"code": "MK",
-		"value": 0,
+		"value": 1,
 		"name": "Macedonia, FYR"
 	},
 	{
@@ -586,7 +586,7 @@
 	},
 	{
 		"code": "MY",
-		"value": 0,
+		"value": 852,
 		"name": "Malaysia"
 	},
 	{
@@ -626,7 +626,7 @@
 	},
 	{
 		"code": "MX",
-		"value": 0,
+		"value": 33200,
 		"name": "Mexico"
 	},
 	{
@@ -636,7 +636,7 @@
 	},
 	{
 		"code": "MD",
-		"value": 0,
+		"value": 1,
 		"name": "Moldova"
 	},
 	{
@@ -646,7 +646,7 @@
 	},
 	{
 		"code": "MN",
-		"value": 0,
+		"value": 1,
 		"name": "Mongolia"
 	},
 	{
@@ -681,7 +681,7 @@
 	},
 	{
 		"code": "NL",
-		"value": 0,
+		"value": 1,
 		"name": "Netherlands"
 	},
 	{
@@ -691,7 +691,7 @@
 	},
 	{
 		"code": "NZ",
-		"value": 0,
+		"value": 15,
 		"name": "New Zealand"
 	},
 	{
@@ -701,7 +701,7 @@
 	},
 	{
 		"code": "NE",
-		"value": 0,
+		"value": 21,
 		"name": "Niger"
 	},
 	{
@@ -716,7 +716,7 @@
 	},
 	{
 		"code": "NO",
-		"value": 0,
+		"value": 156,
 		"name": "Norway"
 	},
 	{
@@ -756,7 +756,7 @@
 	},
 	{
 		"code": "PH",
-		"value": 0,
+		"value": 255,
 		"name": "Philippines"
 	},
 	{
@@ -766,7 +766,7 @@
 	},
 	{
 		"code": "PT",
-		"value": 0,
+		"value": 1,
 		"name": "Portugal"
 	},
 	{
@@ -781,12 +781,12 @@
 	},
 	{
 		"code": "RO",
-		"value": 0,
+		"value": 25,
 		"name": "Romania"
 	},
 	{
 		"code": "RU",
-		"value": 0,
+		"value": 59,
 		"name": "Russian Federation"
 	},
 	{
@@ -836,17 +836,17 @@
 	},
 	{
 		"code": "SG",
-		"value": 0,
+		"value": 51,
 		"name": "Singapore"
 	},
 	{
 		"code": "SK",
-		"value": 0,
+		"value": 11,
 		"name": "Slovak Republic"
 	},
 	{
 		"code": "SI",
-		"value": 0,
+		"value": 1,
 		"name": "Slovenia"
 	},
 	{
@@ -871,12 +871,12 @@
 	},
 	{
 		"code": "ES",
-		"value": 0,
+		"value": 1,
 		"name": "Spain"
 	},
 	{
 		"code": "LK",
-		"value": 0,
+		"value": 4,
 		"name": "Sri Lanka"
 	},
 	{
@@ -916,22 +916,22 @@
 	},
 	{
 		"code": "SE",
-		"value": 0,
+		"value": 95,
 		"name": "Sweden"
 	},
 	{
 		"code": "CH",
-		"value": 0,
+		"value": 4,
 		"name": "Switzerland"
 	},
 	{
 		"code": "SY",
-		"value": 0,
+		"value": 27,
 		"name": "Syrian Arab Republic"
 	},
 	{
 		"code": "TJ",
-		"value": 0,
+		"value": 63,
 		"name": "Tajikistan"
 	},
 	{
@@ -941,7 +941,7 @@
 	},
 	{
 		"code": "TH",
-		"value": 0,
+		"value": 1586,
 		"name": "Thailand"
 	},
 	{
@@ -971,7 +971,7 @@
 	},
 	{
 		"code": "TR",
-		"value": 0,
+		"value": 503,
 		"name": "Turkey"
 	},
 	{
@@ -996,12 +996,12 @@
 	},
 	{
 		"code": "UA",
-		"value": 0,
+		"value": 6,
 		"name": "Ukraine"
 	},
 	{
 		"code": "AE",
-		"value": 0,
+		"value": 187,
 		"name": "United Arab Emirates"
 	},
 	{
@@ -1011,7 +1011,7 @@
 	},
 	{
 		"code": "US",
-		"value": 0,
+		"value": 29153,
 		"name": "United States"
 	},
 	{
@@ -1031,12 +1031,12 @@
 	},
 	{
 		"code": "VE",
-		"value": 0,
+		"value": 1,
 		"name": "Venezuela, RB"
 	},
 	{
 		"code": "VN",
-		"value": 0,
+		"value": 293,
 		"name": "Vietnam"
 	},
 	{
