@@ -1,0 +1,1072 @@
+[
+	{
+		"code": "AF",
+		"use": 0, "trafficking": 0,
+		"name": "Afghanistan"
+	},
+	{
+		"code": "AL",
+		"use": 1059, "trafficking": 0,
+		"name": "Albania"
+	},
+	{
+		"code": "DZ",
+		"use": 0, "trafficking": 1417,
+		"name": "Algeria"
+	},
+	{
+		"code": "AS",
+		"use": 0, "trafficking": 0,
+		"name": "American Samoa"
+	},
+	{
+		"code": "AD",
+		"use": 0, "trafficking": 0,
+		"name": "Andorra"
+	},
+	{
+		"code": "AO",
+		"use": 0, "trafficking": 0,
+		"name": "Angola"
+	},
+	{
+		"code": "AI",
+		"use": 0, "trafficking": 0,
+		"name": "Antigua and Barbuda"
+	},
+	{
+		"code": "AR",
+		"use": 0, "trafficking": 0,
+		"name": "Argentina"
+	},
+	{
+		"code": "AM",
+		"use": 467, "trafficking": 656,
+		"name": "Armenia"
+	},
+	{
+		"code": "AW",
+		"use": 0, "trafficking": 0,
+		"name": "Aruba"
+	},
+	{
+		"code": "AU",
+		"use": 0, "trafficking": 0,
+		"name": "Australia"
+	},
+	{
+		"code": "AT",
+		"use": 0, "trafficking": 0,
+		"name": "Austria"
+	},
+	{
+		"code": "AZ",
+		"use": 1212, "trafficking": 1572,
+		"name": "Azerbaijan"
+	},
+	{
+		"code": "BS",
+		"use": 0, "trafficking": 0,
+		"name": "Bahamas, The"
+	},
+	{
+		"code": "BH",
+		"use": 0, "trafficking": 0,
+		"name": "Bahrain"
+	},
+	{
+		"code": "BD",
+		"use": 0, "trafficking": 0,
+		"name": "Bangladesh"
+	},
+	{
+		"code": "BB",
+		"use": 0, "trafficking": 0,
+		"name": "Barbados"
+	},
+	{
+		"code": "BY",
+		"use": 2383, "trafficking": 0,
+		"name": "Belarus"
+	},
+	{
+		"code": "BE",
+		"use": 31617, "trafficking": 0,
+		"name": "Belgium"
+	},
+	{
+		"code": "BZ",
+		"use": 0, "trafficking": 0,
+		"name": "Belize"
+	},
+	{
+		"code": "BJ",
+		"use": 0, "trafficking": 0,
+		"name": "Benin"
+	},
+	{
+		"code": "BM",
+		"use": 0, "trafficking": 0,
+		"name": "Bermuda"
+	},
+	{
+		"code": "BT",
+		"use": 0, "trafficking": 0,
+		"name": "Bhutan"
+	},
+	{
+		"code": "BO",
+		"use": 0, "trafficking": 0,
+		"name": "Bolivia"
+	},
+	{
+		"code": "BA",
+		"use": 0, "trafficking": 0,
+		"name": "Bosnia and Herzegovina"
+	},
+	{
+		"code": "BW",
+		"use": 0, "trafficking": 0,
+		"name": "Botswana"
+	},
+	{
+		"code": "BR",
+		"use": 0, "trafficking": 0,
+		"name": "Brazil"
+	},
+	{
+		"code": "BN",
+		"use": 0, "trafficking": 0,
+		"name": "Brunei Darussalam"
+	},
+	{
+		"code": "BG",
+		"use": 0, "trafficking": 0,
+		"name": "Bulgaria"
+	},
+	{
+		"code": "BF",
+		"use": 0, "trafficking": 0,
+		"name": "Burkina Faso"
+	},
+	{
+		"code": "BI",
+		"use": 0, "trafficking": 0,
+		"name": "Burundi"
+	},
+	{
+		"code": "KH",
+		"use": 0, "trafficking": 0,
+		"name": "Cambodia"
+	},
+	{
+		"code": "CM",
+		"use": 0, "trafficking": 0,
+		"name": "Cameroon"
+	},
+	{
+		"code": "CA",
+		"use": 69921, "trafficking": 23993,
+		"name": "Canada"
+	},
+	{
+		"code": "CV",
+		"use": 0, "trafficking": 0,
+		"name": "Cape Verde"
+	},
+	{
+		"code": "KY",
+		"use": 0, "trafficking": 0,
+		"name": "Cayman Islands"
+	},
+	{
+		"code": "CF",
+		"use": 0, "trafficking": 0,
+		"name": "Central African Republic"
+	},
+	{
+		"code": "TD",
+		"use": 0, "trafficking": 0,
+		"name": "Chad"
+	},
+	{
+		"code": "CL",
+		"use": 1099, "trafficking": 5466,
+		"name": "Chile"
+	},
+	{
+		"code": "CN",
+		"use": 0, "trafficking": 0,
+		"name": "China"
+	},
+	{
+		"code": "CO",
+		"use": 0, "trafficking": 0,
+		"name": "Colombia"
+	},
+	{
+		"code": "KM",
+		"use": 0, "trafficking": 0,
+		"name": "Comoros"
+	},
+	{
+		"code": "CD",
+		"use": 0, "trafficking": 0,
+		"name": "Congo, Dem. Rep."
+	},
+	{
+		"code": "CG",
+		"use": 0, "trafficking": 0,
+		"name": "Congo, Rep."
+	},
+	{
+		"code": "CR",
+		"use": 0, "trafficking": 309,
+		"name": "Costa Rica"
+	},
+	{
+		"code": "CI",
+		"use": 154, "trafficking": 62,
+		"name": "Cote d'Ivoire"
+	},
+	{
+		"code": "HR",
+		"use": 5004, "trafficking": 0,
+		"name": "Croatia"
+	},
+	{
+		"code": "CU",
+		"use": 0, "trafficking": 0,
+		"name": "Cuba"
+	},
+	{
+		"code": "CW",
+		"use": 0, "trafficking": 0,
+		"name": "Curacao"
+	},
+	{
+		"code": "CY",
+		"use": 239, "trafficking": 0,
+		"name": "Cyprus"
+	},
+	{
+		"code": "CZ",
+		"use": 411, "trafficking": 0,
+		"name": "Czech Republic"
+	},
+	{
+		"code": "DK",
+		"use": 0, "trafficking": 0,
+		"name": "Denmark"
+	},
+	{
+		"code": "DJ",
+		"use": 0, "trafficking": 0,
+		"name": "Djibouti"
+	},
+	{
+		"code": "DM",
+		"use": 0, "trafficking": 0,
+		"name": "Dominica"
+	},
+	{
+		"code": "DO",
+		"use": 0, "trafficking": 1862,
+		"name": "Dominican Republic"
+	},
+	{
+		"code": "EC",
+		"use": 0, "trafficking": 2773,
+		"name": "Ecuador"
+	},
+	{
+		"code": "EG",
+		"use": 17016, "trafficking": 14005,
+		"name": "Egypt, Arab Rep."
+	},
+	{
+		"code": "SV",
+		"use": 0, "trafficking": 1073,
+		"name": "El Salvador"
+	},
+	{
+		"code": "GQ",
+		"use": 0, "trafficking": 0,
+		"name": "Equatorial Guinea"
+	},
+	{
+		"code": "ER",
+		"use": 0, "trafficking": 0,
+		"name": "Eritrea"
+	},
+	{
+		"code": "EE",
+		"use": 0, "trafficking": 0,
+		"name": "Estonia"
+	},
+	{
+		"code": "ET",
+		"use": 0, "trafficking": 0,
+		"name": "Ethiopia"
+	},
+	{
+		"code": "FO",
+		"use": 0, "trafficking": 0,
+		"name": "Faroe Islands"
+	},
+	{
+		"code": "FJ",
+		"use": 0, "trafficking": 0,
+		"name": "Fiji"
+	},
+	{
+		"code": "FI",
+		"use": 9823, "trafficking": 0,
+		"name": "Finland"
+	},
+	{
+		"code": "FR",
+		"use": 139483, "trafficking": 0,
+		"name": "France"
+	},
+	{
+		"code": "PF",
+		"use": 0, "trafficking": 0,
+		"name": "French Polynesia"
+	},
+	{
+		"code": "GA",
+		"use": 0, "trafficking": 0,
+		"name": "Gabon"
+	},
+	{
+		"code": "GM",
+		"use": 0, "trafficking": 0,
+		"name": "Gambia, The"
+	},
+	{
+		"code": "GE",
+		"use": 0, "trafficking": 1616,
+		"name": "Georgia"
+	},
+	{
+		"code": "DE",
+		"use": 0, "trafficking": 0,
+		"name": "Germany"
+	},
+	{
+		"code": "GH",
+		"use": 0, "trafficking": 0,
+		"name": "Ghana"
+	},
+	{
+		"code": "GR",
+		"use": 0, "trafficking": 0,
+		"name": "Greece"
+	},
+	{
+		"code": "GL",
+		"use": 0, "trafficking": 0,
+		"name": "Greenland"
+	},
+	{
+		"code": "GD",
+		"use": 0, "trafficking": 0,
+		"name": "Grenada"
+	},
+	{
+		"code": "GU",
+		"use": 0, "trafficking": 0,
+		"name": "Guam"
+	},
+	{
+		"code": "GT",
+		"use": 0, "trafficking": 0,
+		"name": "Guatemala"
+	},
+	{
+		"code": "GN",
+		"use": 0, "trafficking": 0,
+		"name": "Guinea"
+	},
+	{
+		"code": "GW",
+		"use": 0, "trafficking": 0,
+		"name": "Guinea-Bissau"
+	},
+	{
+		"code": "GY",
+		"use": 0, "trafficking": 0,
+		"name": "Guyana"
+	},
+	{
+		"code": "HT",
+		"use": 0, "trafficking": 0,
+		"name": "Haiti"
+	},
+	{
+		"code": "HN",
+		"use": 0, "trafficking": 0,
+		"name": "Honduras"
+	},
+	{
+		"code": "HK",
+		"use": 0, "trafficking": 0,
+		"name": "Hong Kong SAR, China"
+	},
+	{
+		"code": "HU",
+		"use": 4558, "trafficking": 0,
+		"name": "Hungary"
+	},
+	{
+		"code": "IS",
+		"use": 1198, "trafficking": 0,
+		"name": "Iceland"
+	},
+	{
+		"code": "IN",
+		"use": 0, "trafficking": 0,
+		"name": "India"
+	},
+	{
+		"code": "ID",
+		"use": 0, "trafficking": 0,
+		"name": "Indonesia"
+	},
+	{
+		"code": "IR",
+		"use": 0, "trafficking": 0,
+		"name": "Iran, Islamic Rep."
+	},
+	{
+		"code": "IQ",
+		"use": 0, "trafficking": 0,
+		"name": "Iraq"
+	},
+	{
+		"code": "IE",
+		"use": 0, "trafficking": 0,
+		"name": "Ireland"
+	},
+	{
+		"code": "IM",
+		"use": 0, "trafficking": 0,
+		"name": "Isle of Man"
+	},
+	{
+		"code": "IL",
+		"use": 4355, "trafficking": 0,
+		"name": "Israel"
+	},
+	{
+		"code": "IT",
+		"use": 0, "trafficking": 0,
+		"name": "Italy"
+	},
+	{
+		"code": "JM",
+		"use": 0, "trafficking": 0,
+		"name": "Jamaica"
+	},
+	{
+		"code": "JP",
+		"use": 17639, "trafficking": 199,
+		"name": "Japan"
+	},
+	{
+		"code": "JO",
+		"use": 0, "trafficking": 0,
+		"name": "Jordan"
+	},
+	{
+		"code": "KZ",
+		"use": 9495, "trafficking": 5411,
+		"name": "Kazakhstan"
+	},
+	{
+		"code": "KE",
+		"use": 3969, "trafficking": 177,
+		"name": "Kenya"
+	},
+	{
+		"code": "KI",
+		"use": 0, "trafficking": 0,
+		"name": "Kiribati"
+	},
+	{
+		"code": "KP",
+		"use": 0, "trafficking": 0,
+		"name": "Korea, Dem. Rep."
+	},
+	{
+		"code": "KR",
+		"use": 0, "trafficking": 0,
+		"name": "Korea, Rep."
+	},
+	{
+		"code": "XK",
+		"use": 0, "trafficking": 0,
+		"name": "Kosovo"
+	},
+	{
+		"code": "KW",
+		"use": 0, "trafficking": 0,
+		"name": "Kuwait"
+	},
+	{
+		"code": "KG",
+		"use": 1143, "trafficking": 1642,
+		"name": "Kyrgyz Republic"
+	},
+	{
+		"code": "LA",
+		"use": 0, "trafficking": 0,
+		"name": "Lao PDR"
+	},
+	{
+		"code": "LV",
+		"use": 0, "trafficking": 0,
+		"name": "Latvia"
+	},
+	{
+		"code": "LB",
+		"use": 0, "trafficking": 688,
+		"name": "Lebanon"
+	},
+	{
+		"code": "LS",
+		"use": 312, "trafficking": 312,
+		"name": "Lesotho"
+	},
+	{
+		"code": "LR",
+		"use": 0, "trafficking": 0,
+		"name": "Liberia"
+	},
+	{
+		"code": "LY",
+		"use": 0, "trafficking": 0,
+		"name": "Libya"
+	},
+	{
+		"code": "LI",
+		"use": 190, "trafficking": 0,
+		"name": "Liechtenstein"
+	},
+	{
+		"code": "LT",
+		"use": 579, "trafficking": 0,
+		"name": "Lithuania"
+	},
+	{
+		"code": "LU",
+		"use": 1179, "trafficking": 0,
+		"name": "Luxembourg"
+	},
+	{
+		"code": "MO",
+		"use": 0, "trafficking": 0,
+		"name": "Macao SAR, China"
+	},
+	{
+		"code": "MK",
+		"use": 0, "trafficking": 0,
+		"name": "Macedonia, FYR"
+	},
+	{
+		"code": "MG",
+		"use": 0, "trafficking": 0,
+		"name": "Madagascar"
+	},
+	{
+		"code": "MW",
+		"use": 0, "trafficking": 0,
+		"name": "Malawi"
+	},
+	{
+		"code": "MY",
+		"use": 0, "trafficking": 0,
+		"name": "Malaysia"
+	},
+	{
+		"code": "MV",
+		"use": 2418, "trafficking": 0,
+		"name": "Maldives"
+	},
+	{
+		"code": "ML",
+		"use": 0, "trafficking": 0,
+		"name": "Mali"
+	},
+	{
+		"code": "MT",
+		"use": 324, "trafficking": 0,
+		"name": "Malta"
+	},
+	{
+		"code": "MH",
+		"use": 0, "trafficking": 0,
+		"name": "Marshall Islands"
+	},
+	{
+		"code": "MR",
+		"use": 0, "trafficking": 0,
+		"name": "Mauritania"
+	},
+	{
+		"code": "MU",
+		"use": 3023, "trafficking": 1033,
+		"name": "Mauritius"
+	},
+	{
+		"code": "YT",
+		"use": 0, "trafficking": 0,
+		"name": "Mayotte"
+	},
+	{
+		"code": "MX",
+		"use": 26976, "trafficking": 47135,
+		"name": "Mexico"
+	},
+	{
+		"code": "FM",
+		"use": 0, "trafficking": 0,
+		"name": "Micronesia, Fed. Sts."
+	},
+	{
+		"code": "MD",
+		"use": 0, "trafficking": 0,
+		"name": "Moldova"
+	},
+	{
+		"code": "MC",
+		"use": 0, "trafficking": 0,
+		"name": "Monaco"
+	},
+	{
+		"code": "MN",
+		"use": 1, "trafficking": 278,
+		"name": "Mongolia"
+	},
+	{
+		"code": "ME",
+		"use": 0, "trafficking": 0,
+		"name": "Montenegro"
+	},
+	{
+		"code": "MA",
+		"use": 14222, "trafficking": 11632,
+		"name": "Morocco"
+	},
+	{
+		"code": "MZ",
+		"use": 0, "trafficking": 0,
+		"name": "Mozambique"
+	},
+	{
+		"code": "MM",
+		"use": 0, "trafficking": 0,
+		"name": "Myanmar"
+	},
+	{
+		"code": "NA",
+		"use": 0, "trafficking": 0,
+		"name": "Namibia"
+	},
+	{
+		"code": "NP",
+		"use": 0, "trafficking": 0,
+		"name": "Nepal"
+	},
+	{
+		"code": "NL",
+		"use": 0, "trafficking": 0,
+		"name": "Netherlands"
+	},
+	{
+		"code": "NC",
+		"use": 0, "trafficking": 0,
+		"name": "New Caledonia"
+	},
+	{
+		"code": "NZ",
+		"use": 14775, "trafficking": 0,
+		"name": "New Zealand"
+	},
+	{
+		"code": "NI",
+		"use": 0, "trafficking": 1796,
+		"name": "Nicaragua"
+	},
+	{
+		"code": "NE",
+		"use": 0, "trafficking": 0,
+		"name": "Niger"
+	},
+	{
+		"code": "NG",
+		"use": 0, "trafficking": 0,
+		"name": "Nigeria"
+	},
+	{
+		"code": "MP",
+		"use": 0, "trafficking": 0,
+		"name": "Northern Mariana Islands"
+	},
+	{
+		"code": "NO",
+		"use": 19191, "trafficking": 0,
+		"name": "Norway"
+	},
+	{
+		"code": "OM",
+		"use": 478, "trafficking": 0,
+		"name": "Oman"
+	},
+	{
+		"code": "PK",
+		"use": 0, "trafficking": 0,
+		"name": "Pakistan"
+	},
+	{
+		"code": "PW",
+		"use": 0, "trafficking": 0,
+		"name": "Palau"
+	},
+	{
+		"code": "PA",
+		"use": 0, "trafficking": 855,
+		"name": "Panama"
+	},
+	{
+		"code": "PG",
+		"use": 0, "trafficking": 0,
+		"name": "Papua New Guinea"
+	},
+	{
+		"code": "PY",
+		"use": 0, "trafficking": 157,
+		"name": "Paraguay"
+	},
+	{
+		"code": "PE",
+		"use": 0, "trafficking": 0,
+		"name": "Peru"
+	},
+	{
+		"code": "PH",
+		"use": 0, "trafficking": 0,
+		"name": "Philippines"
+	},
+	{
+		"code": "PL",
+		"use": 30458, "trafficking": 0,
+		"name": "Poland"
+	},
+	{
+		"code": "PT",
+		"use": 0, "trafficking": 0,
+		"name": "Portugal"
+	},
+	{
+		"code": "PR",
+		"use": 0, "trafficking": 0,
+		"name": "Puerto Rico"
+	},
+	{
+		"code": "WA",
+		"use": 0, "trafficking": 0,
+		"name": "Qatar"
+	},
+	{
+		"code": "RO",
+		"use": 1553, "trafficking": 0,
+		"name": "Romania"
+	},
+	{
+		"code": "RU",
+		"use": 0, "trafficking": 0,
+		"name": "Russian Federation"
+	},
+	{
+		"code": "RW",
+		"use": 0, "trafficking": 0,
+		"name": "Rwanda"
+	},
+	{
+		"code": "WS",
+		"use": 0, "trafficking": 0,
+		"name": "Samoa"
+	},
+	{
+		"code": "SM",
+		"use": 0, "trafficking": 0,
+		"name": "San Marino"
+	},
+	{
+		"code": "ST",
+		"use": 0, "trafficking": 0,
+		"name": "Sao Tome and Principe"
+	},
+	{
+		"code": "SA",
+		"use": 0, "trafficking": 0,
+		"name": "Saudi Arabia"
+	},
+	{
+		"code": "SN",
+		"use": 0, "trafficking": 0,
+		"name": "Senegal"
+	},
+	{
+		"code": "RS",
+		"use": 0, "trafficking": 0,
+		"name": "Serbia"
+	},
+	{
+		"code": "SC",
+		"use": 0, "trafficking": 0,
+		"name": "Seychelles"
+	},
+	{
+		"code": "SL",
+		"use": 7, "trafficking": 7,
+		"name": "Sierra Leone"
+	},
+	{
+		"code": "SG",
+		"use": 0, "trafficking": 0,
+		"name": "Singapore"
+	},
+	{
+		"code": "SK",
+		"use": 0, "trafficking": 0,
+		"name": "Slovak Republic"
+	},
+	{
+		"code": "SI",
+		"use": 3063, "trafficking": 0,
+		"name": "Slovenia"
+	},
+	{
+		"code": "SB",
+		"use": 111, "trafficking": 0,
+		"name": "Solomon Islands"
+	},
+	{
+		"code": "SO",
+		"use": 0, "trafficking": 0,
+		"name": "Somalia"
+	},
+	{
+		"code": "ZA",
+		"use": 0, "trafficking": 0,
+		"name": "South Africa"
+	},
+	{
+		"code": "SS",
+		"use": 0, "trafficking": 0,
+		"name": "South Sudan"
+	},
+	{
+		"code": "ES",
+		"use": 0, "trafficking": 0,
+		"name": "Spain"
+	},
+	{
+		"code": "LK",
+		"use": 0, "trafficking": 0,
+		"name": "Sri Lanka"
+	},
+	{
+		"code": "KN",
+		"use": 0, "trafficking": 0,
+		"name": "St. Kitts and Nevis"
+	},
+	{
+		"code": "LC",
+		"use": 0, "trafficking": 0,
+		"name": "St. Lucia"
+	},
+	{
+		"code": "MF",
+		"use": 0, "trafficking": 0,
+		"name": "St. Martin (French part)"
+	},
+	{
+		"code": "VC",
+		"use": 0, "trafficking": 0,
+		"name": "St. Vincent and the Grenadines"
+	},
+	{
+		"code": "SD",
+		"use": 0, "trafficking": 0,
+		"name": "Sudan"
+	},
+	{
+		"code": "SR",
+		"use": 0, "trafficking": 0,
+		"name": "Suriname"
+	},
+	{
+		"code": "SZ",
+		"use": 0, "trafficking": 0,
+		"name": "Swaziland"
+	},
+	{
+		"code": "SE",
+		"use": 71333, "trafficking": 0,
+		"name": "Sweden"
+	},
+	{
+		"code": "CH",
+		"use": 38875, "trafficking": 0,
+		"name": "Switzerland"
+	},
+	{
+		"code": "SY",
+		"use": 0, "trafficking": 0,
+		"name": "Syrian Arab Republic"
+	},
+	{
+		"code": "TJ",
+		"use": 0, "trafficking": 581,
+		"name": "Tajikistan"
+	},
+	{
+		"code": "TZ",
+		"use": 0, "trafficking": 0,
+		"name": "Tanzania"
+	},
+	{
+		"code": "TH",
+		"use": 0, "trafficking": 0,
+		"name": "Thailand"
+	},
+	{
+		"code": "TP",
+		"use": 0, "trafficking": 0,
+		"name": "Timor-Leste"
+	},
+	{
+		"code": "TG",
+		"use": 0, "trafficking": 0,
+		"name": "Togo"
+	},
+	{
+		"code": "TO",
+		"use": 0, "trafficking": 0,
+		"name": "Tonga"
+	},
+	{
+		"code": "TT",
+		"use": 0, "trafficking": 0,
+		"name": "Trinidad and Tobago"
+	},
+	{
+		"code": "TN",
+		"use": 0, "trafficking": 0,
+		"name": "Tunisia"
+	},
+	{
+		"code": "TR",
+		"use": 0, "trafficking": 0,
+		"name": "Turkey"
+	},
+	{
+		"code": "TM",
+		"use": 0, "trafficking": 1027,
+		"name": "Turkmenistan"
+	},
+	{
+		"code": "TC",
+		"use": 0, "trafficking": 0,
+		"name": "Turks and Caicos Islands"
+	},
+	{
+		"code": "TV",
+		"use": 0, "trafficking": 0,
+		"name": "Tuvalu"
+	},
+	{
+		"code": "UG",
+		"use": 0, "trafficking": 0,
+		"name": "Uganda"
+	},
+	{
+		"code": "UA",
+		"use": 0, "trafficking": 0,
+		"name": "Ukraine"
+	},
+	{
+		"code": "AE",
+		"use": 0, "trafficking": 0,
+		"name": "United Arab Emirates"
+	},
+	{
+		"code": "UK",
+		"use": 214754, "trafficking": 0,
+		"name": "United Kingdom"
+	},
+	{
+		"code": "US",
+		"use": 0, "trafficking": 0,
+		"name": "United States"
+	},
+	{
+		"code": "UY",
+		"use": 0, "trafficking": 0,
+		"name": "Uruguay"
+	},
+	{
+		"code": "UZ",
+		"use": 0, "trafficking": 0,
+		"name": "Uzbekistan"
+	},
+	{
+		"code": "VU",
+		"use": 0, "trafficking": 0,
+		"name": "Vanuatu"
+	},
+	{
+		"code": "VE",
+		"use": 0, "trafficking": 0,
+		"name": "Venezuela, RB"
+	},
+	{
+		"code": "VN",
+		"use": 0, "trafficking": 0,
+		"name": "Vietnam"
+	},
+	{
+		"code": "VI",
+		"use": 0, "trafficking": 0,
+		"name": "Virgin Islands (U.S.)"
+	},
+	{
+		"code": "PS",
+		"use": 0, "trafficking": 0,
+		"name": "West Bank and Gaza"
+	},
+	{
+		"code": "EH",
+		"use": 0, "trafficking": 0,
+		"name": "Western Sahara"
+	},
+	{
+		"code": "YE",
+		"use": 0, "trafficking": 0,
+		"name": "Yemen, Rep."
+	},
+	{
+		"code": "ZM",
+		"use": 0, "trafficking": 0,
+		"name": "Zambia"
+	},
+	{
+		"code": "ZW",
+		"use": 0, "trafficking": 0,
+		"name": "Zimbabwe"
+	}
+]
