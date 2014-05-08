@@ -1,4 +1,5 @@
-var base,cocaine, marijuana, meth, heroin,rnkMj,rnkHer,rnkMeth,rnkCoke;
+var base,cocaine, marijuana, meth, heroin,rnkMj,rnkHer,rnkMeth,rnkCoke, borderMap,crime, bubbles=[];
+var crimeUse, crimeTraffick,crimeTotal;
 
 var countryRankings ={};
 var rankings = {
@@ -122,6 +123,147 @@ var rankings = {
     }
 }
 
+var crimeRankings ={
+    'overall': {
+        'countries':[
+            "United Kingdom",
+            "France",
+            "Canada",
+            "Mexico",
+            "Sweden",
+            "Switzerland",
+            "Belgium",
+            "Egypt",
+            "Poland",
+            "Morocco",
+            "Norway",
+            "Japan",
+            "Kazakhstan",
+            "New Zealand",
+            "Finland",
+            "Chile",
+            "Croatia",
+            "Hungary",
+            "Israel",
+            "Kenya"
+        ],
+        'values':[
+            214754,
+            139483,
+            93914,
+            74111,
+            71333,
+            38875,
+            31617,
+            31021,
+            30458,
+            25854,
+            19191,
+            17838,
+            14906,
+            14775,
+            9823,
+            6565,
+            5004,
+            4558,
+            4355,
+            4146
+        ]
+    },
+    'use': {
+        'countries': [
+            "United Kingdom",
+            "France",
+            "Sweden",
+            "Canada",
+            "Switzerland",
+            "Belgium",
+            "Poland",
+            "Mexico",
+            "Norway",
+            "Japan",
+            "Egypt",
+            "New Zealand",
+            "Morocco",
+            "Finland",
+            "Kazakhstan",
+            "Croatia",
+            "Hungary",
+            "Israel",
+            "Kenya",
+            "Slovenia"
+        ],
+        'values': [
+            214754,
+            139483,
+            71333,
+            69921,
+            38875,
+            31617,
+            30458,
+            26976,
+            19191,
+            17639,
+            17016,
+            14775,
+            14222,
+            9823,
+            9495,
+            5004,
+            4558,
+            4355,
+            3969,
+            3063
+        ]
+    },
+    'trafficking': {
+        'countries':[
+            "Mexico",
+            "Canada",
+            "Egypt",
+            "Morocco",
+            "Chile",
+            "Kazakhstan",
+            "Ecuador",
+            "Dominican Republic",
+            "Nicaragua",
+            "Kyrgyz Republic",
+            "Georgia",
+            "Azerbaijan",
+            "Algeria",
+            "El Salvador",
+            "Mauritius",
+            "Turkmenistan",
+            "Panama",
+            "Lebanon",
+            "Armenia",
+            "Tajikistan"
+        ],
+        'values': [
+            47135,
+            23993,
+            14005,
+            11632,
+            5466,
+            5411,
+            2773,
+            1862,
+            1796,
+            1642,
+            1616,
+            1572,
+            1417,
+            1073,
+            1033,
+            1027,
+            855,
+            688,
+            656,
+            581
+        ]
+    }
+}
+
 
 $(document).ready(function() {
     $.getJSON("json/RankingMarijuana.json", function(data) {countryRankings['marijuana'] = data;});
@@ -133,14 +275,97 @@ $(document).ready(function() {
     $.getJSON("json/ganja.json", function (data) { marijuana = getValidCountries(data);});
     $.getJSON("json/heroin.json", function (data) { heroin = getValidCountries(data);});
     $.getJSON("json/meth.json", function (data) { meth = getValidCountries(data);});
-    $.getJSON("json/basemap.json", function (data) { base = data; showDrugs();});  
+    $.getJSON("json/basemap.json", function (data) { base = data; /*showDrugs();*/});  
 
+    $.getJSON("json/crimes.json", function (data) { crime = data;}); 
+    $.getJSON("json/countryCrimesTrafficking.json", function (data) {  crimeTraffick= data;}); 
+    $.getJSON("json/countryCrimesUse.json", function (data) { crimeUse = data;}); 
+    $.getJSON("json/countryCrimesTotal.json", function (data) { crimeTotal = data;}); 
 
-    setTimeout(function(){
-        console.log(countryRankings);
-    },1000);
+    //movePopup(300,200,500,300,'Please select the mode you want to use:<br><a href="" onclick="start(); showDrugs(1);  return false;">Directed</a> | <a href="" onclick="">Exploratory</a>',800);
+    //$('#popup').fadeIn(1500); 
 });
 
+function start()
+{
+    $('#popup').fadeOut(400);
+    movePopup();
+}
+
+function worldCrime(option)
+{
+    var file;
+    switch(option)
+    {
+        case 1: 
+            file = "json/usmexico.json";
+            break;
+        case 2: 
+            file = "json/usstates.json";
+            break;
+        case 3: 
+            file = "json/mexicostates.json";
+            break;
+        case 4:
+            file = "json/borderStates.json";
+            break;
+
+    }
+
+    $.getJSON(file,function(data){ 
+        borderMap = data;
+        drawBorderMap();
+    });
+    
+}
+
+function drawBorderMap()
+{
+    // Instanciate the map
+    $('#borderMap').highcharts2('Map', {
+        title : {
+            text : 'Habitat of the Rusty Blackbird'
+        },
+
+        subtitle : {
+            text : 'An example of a distribution map in Highcharts.<br/>' +
+                'Source: <a href="http://en.wikipedia.org/wiki/File:Euphagus_carolinus_map.svg">Wikipedia</a>.'
+        },
+        plotOptions: {
+            series: {
+                tooltip: {
+                    headerFormat: '',
+                    pointFormat: '{series.name} area'
+                }
+            }
+        },
+
+        legend: {
+            align: 'left',
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || 'rgba(255, 255, 255, 0.85)',
+            floating: true,
+            layout: 'vertical',
+            verticalAlign: 'bottom',
+            reversed: true
+        },
+        series : [{
+            type: "map",
+            enableMouseTracking: false,
+            showInLegend: false,
+            mapData: borderMap,
+            states: {
+                hover: {
+                    color: '#BADA55'
+                },
+            },
+            events: {
+                click: function(event) {
+                    console.log(event.point);
+                }
+            } 
+        }]
+    });
+}
 
 function getValidCountries(data)
 {
@@ -148,7 +373,6 @@ function getValidCountries(data)
     $.each(data,function(index,value) {
         if(value.value >1)
             res.push(value);
-        //console.log(value.code+","+value.name+","+value.value+",");
     })
     return res;
 }
@@ -198,13 +422,13 @@ function showDrugs(type)
             color = "#488AC7";
             title = "";
     }
+
     drawMap(file,color,title);
     
 }
 
-function drawRanking(title,countries,values)
+function drawRanking(title,countries,values,color)
 {
-    
     $('#sidechart').highcharts({
         chart: {
             type: 'bar'
@@ -225,9 +449,9 @@ function drawRanking(title,countries,values)
             // }
         },
         exporting: { enabled: false },
-        tooltip: {
-            valueSuffix: ' kgs'
-        },
+        // tooltip: {
+        //     valueSuffix: ' kgs'
+        // },
         plotOptions: {
             bar: {
                 dataLabels: {
@@ -252,11 +476,13 @@ function drawRanking(title,countries,values)
         series: [{
             name: title,
             data: values,
+            showInLegend:false,
+            color: color,
             events: {
                 click: function(event) {
                     console.log(event.point.code);
                     drawBottomGraph(event.point.code, event.point.name);
-                    getRankings(event.point.code);
+                    getRankings(event.point.code);    
                 }
             }
         }]
@@ -299,7 +525,6 @@ function getRankings(code)
 
     console.log(ranks);
 }
-    
 
 function drawBottomGraph(code, country)
 {
@@ -337,11 +562,14 @@ function drawBottomGraph(code, country)
             enabled: false
         },
         series: [{
+                showInLegend:false,
                 name: country,
                 data: getDrugs(code)
             }]
     });
 }
+
+/***** MAP ZOOMING *******/
 
 function zoom(code)
 {
@@ -364,9 +592,178 @@ function zoomBorder()
 //         return str;
 // }
 
+
+
+/****** CRIMES  ********/
+
+function showCrime(type)
+{
+    var color;
+    var file;
+    switch (type)
+    {
+        case 1:
+            color = "#f45b5b";
+            file = crimeTotal;
+            title = "Total Drug Related Crimes";
+            drawRanking(title,crimeRankings.overall.countries,crimeRankings.overall.values,color);
+            break;
+
+        case 2:
+            color = "#f45b5b";
+            file = crimeUse;
+            title = "Drug Use Crimes";
+            drawRanking(title,crimeRankings.use.countries,crimeRankings.use.values,color);
+            break;
+
+        case 3:
+            color = "#f45b5b";
+            file = crimeTraffick;
+            title = "Drug Trafficking Crimes";
+            drawRanking(title,crimeRankings.trafficking.countries,crimeRankings.trafficking.values,color);
+            break;
+    }
+
+    createCrimeData(file);
+}
+
+function getCrimes(type)
+{
+    //createCrimeData(crimeTotal);
+    showCrime(type);
+    //drawScatter();
+}
+
+function getCrimesData(code)
+{
+    var values = [];
+    
+    $.each(crimeUse, function(index,value){
+        if(value.code == code)
+            values.push(value.value);
+        //console.log(value.name+","+value.code+","+value.value+",");
+    })
+    
+    $.each(crimeTraffick, function(index,value){
+        if(value.code == code)
+            values.push(value.value);
+    })
+
+    return values;
+}
+
+function drawBottomGraphCrimes(code, country)
+{
+    $('#bottomchart').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: country + ' drug related crimes by type'
+        },
+        xAxis: {
+            categories: [
+                'Possession',
+                'Trafficking'
+            ]
+        },
+        yAxis: {
+            min: 1,
+            max: 1000000,
+            tickInterval: 1,
+            type: 'logarithmic',
+            title: {
+                text: '# crimes'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        exporting: { enabled: false },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+                color: '#f45b5b',
+                name: country,
+                data: getCrimesData(code)
+            }]
+    });
+}
+
+function createCrimeData(data) 
+{
+    $('#container').hide();
+    var maxC=0;
+    bubbles = [];
+    $.each(data, function(index, value){ 
+        //totalCrimes = value.use + value.trafficking;
+        if (value.value > maxC) {
+            maxC=value.value;
+        }        
+        if (value.value !=0) {
+            bubbles.push({"code": value.code,"name":value.name, "z": value.value });
+        }
+        //console.log(value.code+","+value.name+","+totalCrimes+",");
+    });
+
+    console.log(crime);
+    $('#container').highcharts2('Map', {
+        colors: ["#f45b5b", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
+
+        title: {
+            text: 'Crimes by country'
+        },
+        legend: {
+            enabled: false
+        },
+
+        mapNavigation: {
+            enabled: true,
+            buttonOptions: {
+                verticalAlign: 'bottom'
+            }
+        },
+        series : [{
+            name: 'Country',
+            mapData: Highcharts2.maps.world,
+            color: '#E0E0E8',
+            enableMouseTracking: false
+        }, {
+            type: 'mapbubble',
+            mapData: Highcharts2.maps.world,
+            name: 'Total Drug Related Crimes',
+            joinBy: 'code',
+            data: bubbles,
+            fill: '#f45b5b',
+            minSize: 1,
+            maxSize: '12%',
+            tooltip: {
+                pointFormat: '{point.name}: {point.z}'
+            },
+            events: {
+                click: function(event){
+                    console.log(event.point);
+                    drawBottomGraphCrimes(event.point.code, event.point.name);
+                }
+            }
+        }]
+    });
+    $('#container').fadeIn(1000);
+}
+
+/***** DRUGS MAP *********/
+
 function drawMap(file, color, title)
 {
-
+    $('#container').hide();
+    // $('#container').fadeOut(400);
     var max= 0;
     if (title !='')
     {
@@ -432,13 +829,14 @@ function drawMap(file, color, title)
             		console.log(event.point);
                     drawBottomGraph(event.point.code, event.point.name);
                     getRankings(event.point.code);
-
             	}
             }
 
         }]
 
     });
+
+    $('#container').fadeIn(1000);
 }
 
 function resize()
@@ -460,7 +858,27 @@ function showPopup()
     },400, function(){});
 }
 
+function fadeOut()
+{
+    $('#container').fadeOut(1000, function(){$(this).hide();});
+}
 
+function fadeIn(element)
+{
+    console.log($('#'+element).css('display'));
+    //$('#container').fadeIn(1000);   
+}
+
+function movePopup(x,y,w,h,text,time)
+{
+
+    $('#popup').animate({
+        left: x,
+        top: y,
+        width: w,
+        height: h
+    },time,function() { $('#popup').html(text);});
+}
 
 /******************* D3 Transitions ***********************/
 
@@ -484,8 +902,8 @@ function nextSection(sect,time)
             })
             .transition()
             .attr('width',250)
-            .duration(time);
-    console.log(path);
+            .duration(time)
+            ;
 
 }
 

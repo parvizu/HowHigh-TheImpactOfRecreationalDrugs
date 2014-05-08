@@ -16,10 +16,13 @@
 </head>
 <body>
     <div>
-        <a href="" onclick="showDrugs(1); return false;">Marihuana</a> | <a href="" onclick="showDrugs(2); return false;">Cocaine</a> | <a href="" onclick="showDrugs(3); return false;">Meth</a> | <a href="" onclick="showDrugs(4); return false;">Heroin</a> || <a href="" onclick="zoom('MX'); return false;">Zoom to Mexico</a> | <a href="" onclick="zoomBorder(); return false;">Zoom to border</a> || <a href="" onclick="nextSection(1,20000); return false;">Transition 1</a> | <a href="" onclick="nextSection(2,40000); return false;">Transition 2</a> ||  <a href="" onclick="resize(); return false;">Resize</a> | <a href="" onclick="showPopup(); return false;">Move</a> 
+        <a href="" onclick="showDrugs(1); return false;">Marihuana</a> | <a href="" onclick="showDrugs(2); return false;">Cocaine</a> | <a href="" onclick="showDrugs(3); return false;">Meth</a> | <a href="" onclick="showDrugs(4); return false;">Heroin</a> || <a href="" onclick="zoom('MX'); return false;">Zoom to Mexico</a> | <a href="" onclick="zoomBorder(); return false;">Zoom to border</a> || <a href="" onclick="nextSection(1,20000); return false;">Transition 1</a> | <a href="" onclick="nextSection(2,40000); return false;">Transition 2</a> ||  <a href="" onclick="resize(); return false;">Resize</a> | <a href="" onclick="showPopup(); return false;">Move</a>  || <a href="" onclick="fadeOut(); return false;">FadeOut</a> || <br>    <a href="" onclick="getCrimes(1); return false;">Crime</a> | <a href="" onclick="getCrimes(2); return false;">Crime by Use</a> | <a href="" onclick="getCrimes(3); return false;">Crime by Trafficking</a> | 
+
 
     </div>
-    <div id='popup'></div>
+    <div id='popup' style="display: none;"></div>
+
+
     <div id="menu">
         <div class="menuItem menuSection"></div>
         <div class="menuItem pathItem" id="menuPath1"></div>
@@ -35,6 +38,9 @@
     </div>
     <div id="sidechart" style="width: 300px; height:400px; display: inline-block;"></div>
     <div id="bottomchart"></div>
+
+    <a href="" onclick="worldCrime(1); return false;">US/Mex</a> | <a href="" onclick="worldCrime(2); return false;">US</a> | <a href="" onclick="worldCrime(3); return false;">Mexico</a> | <a href="" onclick="worldCrime(4); return false;">Border states</a> 
+    <div id="borderMap" style="display:none;"></div>
 </body>
  <script type="text/javascript" src="js/scripts.js"></script>
 </html>
