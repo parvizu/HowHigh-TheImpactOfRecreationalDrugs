@@ -172,6 +172,7 @@ var crimeRankings ={
     },
     'use': {
         'countries': [
+            "United States",
             "United Kingdom",
             "France",
             "Sweden",
@@ -190,10 +191,10 @@ var crimeRankings ={
             "Croatia",
             "Hungary",
             "Israel",
-            "Kenya",
-            "Slovenia"
+            "Kenya"
         ],
         'values': [
+            1276099,
             214754,
             139483,
             71333,
@@ -212,12 +213,12 @@ var crimeRankings ={
             5004,
             4558,
             4355,
-            3969,
-            3063
+            3969
         ]
     },
     'trafficking': {
         'countries':[
+            "United States",
             "Mexico",
             "Canada",
             "Egypt",
@@ -236,10 +237,10 @@ var crimeRankings ={
             "Turkmenistan",
             "Panama",
             "Lebanon",
-            "Armenia",
-            "Tajikistan"
+            "Armenia"
         ],
         'values': [
+            276333,
             47135,
             23993,
             14005,
@@ -258,8 +259,7 @@ var crimeRankings ={
             1027,
             855,
             688,
-            656,
-            581
+            656
         ]
     }
 }
@@ -646,7 +646,6 @@ function drawScatter() {
             }
         });
     });
-    console.log(values);
 
     $('#scatterChart').highcharts({
         chart: {
