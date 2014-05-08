@@ -1,5 +1,7 @@
 var base,cocaine, marijuana, meth, heroin,rnkMj,rnkHer,rnkMeth,rnkCoke, borderMap,crime, bubbles=[];
 var crimeUse, crimeTraffick,crimeTotal;
+var statflag = 0;
+var selectedCountry =['',''];
 
 var countryRankings ={};
 var rankings = {
@@ -117,8 +119,50 @@ var rankings = {
         "rankings":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
     },
     "meth":{
-        "countries":[],
-        "values":[],
+        "countries":[
+            "Mexico",
+            "United States",
+            "China",
+            "Iran",
+            "Australia",
+            "Indonesia",
+            "Thailand",
+            "Malaysia",
+            "Turkey",
+            "India",
+            "Japan",
+            "Vietnam",
+            "Philippines",
+            "Canada",
+            "United Arab Emirates",
+            "Norway",
+            "Lithuania",
+            "Sweden",
+            "Germany",
+            "Israel"
+        ],
+        "values":[
+            33200,
+            29153,
+            16165,
+            3917,
+            2268,
+            2051,
+            1586,
+            852,
+            503,
+            470,
+            467,
+            293,
+            255,
+            204,
+            187,
+            156,
+            134,
+            95,
+            76,
+            67
+        ],
         "rankings":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
     }
 }
@@ -277,6 +321,8 @@ $(document).ready(function() {
     $.getJSON("json/meth.json", function (data) { meth = getValidCountries(data);});
     $.getJSON("json/basemap.json", function (data) { base = data; /*showDrugs();*/});  
 
+
+
     $.getJSON("json/crimes.json", function (data) { crime = data;}); 
     $.getJSON("json/countryCrimesTrafficking.json", function (data) {  crimeTraffick= data;}); 
     $.getJSON("json/countryCrimesUse.json", function (data) { crimeUse = data;}); 
@@ -381,6 +427,16 @@ function getValidCountries(data)
 
 function showDrugs(type) 
 {
+    
+    if(statflag==1)
+    {
+        $("#bottomchart").html("");
+        if(selectedCountry[0]!='')
+            drawBottomGraph(selectedCountry[0],selectedCountry[1]);
+        statflag = 0;
+    }
+    console.log(statflag);
+        
     var file;
     var color;
     var ranking;
@@ -426,8 +482,11 @@ function showDrugs(type)
     }
 
     drawMap(file,color,title);
+<<<<<<< HEAD
     drawScatter();
     
+=======
+>>>>>>> master
 }
 
 function drawRanking(title,countries,values,color)
@@ -483,7 +542,10 @@ function drawRanking(title,countries,values,color)
             color: color,
             events: {
                 click: function(event) {
-                    console.log(event.point.code);
+                    //console.log(event.point.code);
+                    selectedCountry[0] = event.point.code;
+                    selectedCountry[1] = event.point.name;
+                    $('#countryName').text(selectedCountry[1]);
                     drawBottomGraph(event.point.code, event.point.name);
                     getRankings(event.point.code);    
                 }
@@ -511,6 +573,14 @@ function getDrugs(code)
         if(value.code == code)
             values.push(value.value);
     })
+
+    $.each(meth, function(index,value){
+        if(value.code == code)
+            values.push(value.value);
+        //console.log(value.name+","+value.code+","+value.value+",");
+    })
+
+
     return values;
 }
 
@@ -531,6 +601,7 @@ function getRankings(code)
 
 function drawBottomGraph(code, country)
 {
+    $('#bottomchart').html("");
     $('#bottomchart').highcharts({
         chart: {
             type: 'column'
@@ -542,7 +613,8 @@ function drawBottomGraph(code, country)
             categories: [
                 'Marijuana',
                 'Cocaine',
-                'Heroin'
+                'Heroin',
+                'Meth'
             ]
         },
         yAxis: {
@@ -735,7 +807,16 @@ function zoomBorder()
 /****** CRIMES  ********/
 
 function showCrime(type)
-{
+{     
+    if(statflag==0)
+    {
+        $('#bottomchart').html("");
+        if(selectedCountry[0]!='')
+            drawBottomGraphCrimes(selectedCountry[0],selectedCountry[1]);
+        statflag = 1;
+    }
+    //console.log(statflag);
+        
     var color;
     var file;
     switch (type)
@@ -761,8 +842,7 @@ function showCrime(type)
             drawRanking(title,crimeRankings.trafficking.countries,crimeRankings.trafficking.values,color);
             break;
     }
-
-    createCrimeData(file);
+    createCrimeData(file);       
 }
 
 function getCrimes(type)
@@ -792,12 +872,13 @@ function getCrimesData(code)
 
 function drawBottomGraphCrimes(code, country)
 {
+    $('#bottomchart').html("");
     $('#bottomchart').highcharts({
         chart: {
             type: 'column'
         },
         title: {
-            text: country + ' drug related crimes by type'
+            text: country + ' drug related crimes breakdown'
         },
         xAxis: {
             categories: [
@@ -807,8 +888,8 @@ function drawBottomGraphCrimes(code, country)
         },
         yAxis: {
             min: 1,
-            max: 1000000,
-            tickInterval: 1,
+            max: 100000,
+            //tickInterval: 20000,
             type: 'logarithmic',
             title: {
                 text: '# crimes'
@@ -829,6 +910,7 @@ function drawBottomGraphCrimes(code, country)
         },
         series: [{
                 color: '#f45b5b',
+                allowPointSelect: true,
                 name: country,
                 data: getCrimesData(code)
             }]
@@ -851,7 +933,7 @@ function createCrimeData(data)
         //console.log(value.code+","+value.name+","+totalCrimes+",");
     });
 
-    console.log(crime);
+    //console.log(crime);
     $('#container').highcharts2('Map', {
         colors: ["#f45b5b", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
 
@@ -888,6 +970,9 @@ function createCrimeData(data)
             events: {
                 click: function(event){
                     console.log(event.point);
+                    selectedCountry[0] = event.point.code;
+                    selectedCountry[1] = event.point.name;
+                    $('#countryName').text(selectedCountry[1]);
                     drawBottomGraphCrimes(event.point.code, event.point.name);
                 }
             }
@@ -897,6 +982,11 @@ function createCrimeData(data)
 }
 
 /***** DRUGS MAP *********/
+
+function countryRankingsDrugs()
+{
+    $("")
+}
 
 function drawMap(file, color, title)
 {
@@ -941,6 +1031,7 @@ function drawMap(file, color, title)
         },
         series : [{
             data : file,
+            // allowPointSelect: true,
             mapData: Highcharts2.maps.world,
             joinBy: 'code',
             fill: color,
@@ -965,6 +1056,9 @@ function drawMap(file, color, title)
             events: {
             	click: function(event) {
             		console.log(event.point);
+                    selectedCountry[0] = event.point.code;
+                    selectedCountry[1] = event.point.name;
+                    $('#countryName').text(selectedCountry[1]);
                     drawBottomGraph(event.point.code, event.point.name);
                     getRankings(event.point.code);
             	}

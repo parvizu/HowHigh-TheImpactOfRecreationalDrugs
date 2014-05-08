@@ -1,12 +1,11 @@
+#main
+{
+
+	width: 1200px;
+}
 #menu
 {
 	text-align: center;
-}
-
-#left
-{
-	width:100px;
-	background-color: black;
 }
 
 #container
@@ -16,7 +15,7 @@
 
 #bottomchart
 {
-	width: 500px;
+	width: 400px;
 	height: 200px;
 }
 
@@ -35,6 +34,29 @@
 	position: absolute;
 	border-radius: 5px;
 
+}
+
+#footerRow
+{
+	height: 300px;
+}
+
+#left
+{
+	width:100px;
+	vertical-align: top;
+
+}
+.bottom
+{
+	display: inline-block;
+}
+
+#bottomCenter
+{
+	width: 250px;
+	background-color: silver;
+	vertical-align: top;
 }
 
 .menuItem
