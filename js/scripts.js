@@ -482,11 +482,8 @@ function showDrugs(type)
     }
 
     drawMap(file,color,title);
-<<<<<<< HEAD
     drawScatter();
     
-=======
->>>>>>> master
 }
 
 function drawRanking(title,countries,values,color)
