@@ -39,14 +39,10 @@
 
 #popup 
 {
-	z-index: 10;
-	background-color: rgba(0,0,0,.4);
-	width:200px;
-	height:100px;
-	position: absolute;
-	border-radius: 5px;
-
+    z-index: 100;
+    position: absolute;
 }
+
 
 #footerRow
 {
@@ -161,4 +157,107 @@
 }
 .flat-table-3 tr:hover {
 	background: rgba(0,0,0,0.1);
+}
+
+/*Bubble styling*/
+
+#bubble{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+#bubble img
+{
+    opacity: .6;
+}
+
+#bubbleContent
+{
+    min-width:100px;
+    background-color: rgba(0,0,0,.6);
+    border-radius:5px;
+    margin:0px;
+    padding:10px;
+    max-width: 400px;
+    color:white;
+}
+
+#bubble tr, #bubble td
+{
+    margin:0px;
+    border: 0px;
+}
+
+#bubble img
+{
+    display:inline-block;
+    margin:0px;
+}
+
+
+/******* PART 1 ********/
+#useBottom div
+{
+	display: inline-block;
+	height: 300px;
+}
+
+#leftInfo
+{
+	min-width:500px;
+}
+
+#borderSeizures
+{
+	display:inline-block;
+	height:450px;
+	width: 250px;
+}
+
+.placeholder
+{
+	
+	text-align: center;
+	background-color: black;
+	vertical-align: middle;
+}
+
+.placeholder img
+{
+	vertical-align: middle;
+}
+
+#infograph
+{
+	/*height:500px;*/
+	width: 1120px;
+
+}
+
+#info1
+{
+	background-color: black;
+	z-index: 5;
+}
+
+#info2
+{
+
+	z-index: 6;
+/*	position: relative;*/
+	display: none;
+}
+
+#info3
+{
+
+	z-index: 7;
+	display: none;
+}
+
+#info4
+{
+	
+	z-index: 8;
+	display: none;
 }

@@ -358,16 +358,17 @@ $(document).ready(function() {
     $.getJSON("json/mexicoCrimeKidnappings.json", function (data) {mexicoCrimeKidnappings = getValidCountries(data);});
     $.getJSON("json/mexicoCrimeTotal.json", function (data) {mexicoCrimeTotal = getValidCountries(data);});
 
-    //movePopup(300,200,500,300,'Please select the mode you want to use:<br><a href="" onclick="start(); showDrugs(1);  return false;">Directed</a> | <a href="" onclick="">Exploratory</a>',800);
+    movePopup(300,200,500,300,'Please select the mode you want to use:<br><a href="" onclick="start(); showDrugs(1);  return false;">Directed</a> | <a href="" onclick="">Exploratory</a>',800);
     //$('#popup').fadeIn(1500); 
-    drawBorderSeizures();
+    // drawBorderSeizures();
     drawLegalizeMarijuana();
+    //usProduction();
 
 });
 
 function start()
 {
-    $('#popup').fadeOut(400);
+    //$('#popup').fadeOut(400);
     movePopup();
 }
 
@@ -387,8 +388,8 @@ function mexCrimes(option)
     switch(option)
     {
         case 1: 
-            // file = "json/usmexico.json";
-            usProduction()
+            //file = "json/usmexico.json";
+            usProduction();
             break;
         case 2: 
             mexCrime = mexicoCrimeExtortions;
@@ -473,7 +474,7 @@ function drawBorderMap()
             },
             name: crimeStat,
             tooltip: {
-                pointFormat: '{point.state}: {point.value}'
+                pointFormat: '{point.state}: {point.value} crimes'
             }
         }]
     });
@@ -490,7 +491,7 @@ function usProduction() {
     // Instantiate the map
     // console.log(data)
     // console.log(borderMap)
-    $('#borderMap').highcharts2('Map', {
+    $('#usMap').highcharts2('Map', {
         title : {
             text : 'US Drug Production by State'
         },
@@ -833,28 +834,59 @@ function setFlag(code)
     $("#countryFlag").attr('src','http://www.geonames.org/flags/x/'+code.toLowerCase()+'.gif');
 }
 
-// /***** US Production *******/
-// function usProduction(data) {
-//     // Instantiate the map
-//     $('#usMap').highcharts2('Map', {
-//         title : {
-//             text : 'US Drug Production by State'
-//         },
+/***** US Production *******/
+function usProduction(data) {
+    // Instantiate the map
+    $('#usMap').highcharts2('Map', {
+        title : {
+            text : 'US Drug Production by State'
+        },
 
-//         mapNavigation: {
-//             enabled: true,
-//             buttonOptions: {
-//                 verticalAlign: 'bottom'
-//             }
-//         },
+        mapNavigation: {
+            enabled: true,
+            buttonOptions: {
+                verticalAlign: 'bottom'
+            }
+        },
 
-//         colorAxis: {
-//             min: 1,
-//             type: 'logarithmic',
-//             minColor: '#E6E7E8',
-//             maxColor: '#005645'
-//         },            
-// >>>>>>> master
+        colorAxis: {
+            min: 1,
+            type: 'logarithmic',
+            minColor: '#E6E7E8',
+            maxColor: '#005645'
+        },            
+
+        plotOptions: {
+            map: {
+                states: {
+                    hover: {
+                        color: '#EEDD66'
+                    }
+                }
+            }
+        },            
+        series : [{
+            animation: true,
+            data : data,
+            mapData: Highcharts2.maps.us,
+            joinBy: 'code',
+            dataLabels: {
+                enabled: true,
+                color: 'white',
+                format: '{point.code}',
+                style: {
+                    fontWeight: 'bold',
+                    textShadow: '0 0 3px black',
+                    textTransform: 'uppercase'
+                }
+            },
+            name: 'Production:',
+            tooltip: {
+                pointFormat: '{point.state}: {point.value}/kgs'
+            }
+        }]
+    });
+};
 
 
 /***** MAP ZOOMING ******/
@@ -1246,16 +1278,17 @@ function resize()
     }, 2000,function(){})
 }
 
-function showPopup()
+function showPopup(arrow)
 {
     //console.log((Math.random() * 600) + 1);
     var x = ((Math.random() * 600) +1);
     var y = ((Math.random() * 400) +1);
     
-    $('#popup').animate({
-        left:100+x+"px",
-        top: y+"px",
-    },400, function(){});
+    movePopup(x,y,200,200,'',400,arrow);
+    // $('#popup').animate({
+    //     left:100+x+"px",
+    //     top: y+"px",
+    // },400, function(){});
 }
 
 function fadeOut()
@@ -1269,15 +1302,37 @@ function fadeIn(element)
     //$('#container').fadeIn(1000);   
 }
 
-function movePopup(x,y,w,h,text,time)
+function movePopup(x,y,w,h,text,time,arrow)
 {
 
+    bubbleArrows(arrow);
+    if(text!='')
+    {
+        $("#bubbleContent").html(text);
+    }
+    $("#bubbleContent").css('wdith',w);  
     $('#popup').animate({
-        left: x,
-        top: y,
-        width: w,
-        height: h
-    },time,function() { $('#popup').html(text);});
+        left:100+x+"px",
+        top: y+"px",
+    },time);
+}
+
+function bubbleArrows(arrow)
+{
+    $("#btopright").css('opacity','0');
+    $("#btopleft").css('opacity','0');
+    $("#brighttop").css('opacity','0');
+    $("#brightbottom").css('opacity','0');
+    $("#blefttop").css('opacity','0');
+    $("#bleftbottom").css('opacity','0');
+    $("#bbottomleft").css('opacity','0');
+    $("#bbottomright").css('opacity','0');
+
+    //console.log(arrow);
+    if(arrow)
+    {
+        $("#"+arrow).css('opacity','.6');
+    }
 }
 
 
@@ -1288,7 +1343,7 @@ function drawBorderSeizures()
                 type: 'column'
             },
             title: {
-                text: 'Stacked column chart'
+                text: 'Percentage of Drug seizures in US Borders'
             },
             xAxis: {
                 categories: ['Marijuana','Cocaine','Meth','Heroin','MDMA']
@@ -1507,5 +1562,42 @@ function nextSection(sect,time)
             .attr('width',250)
             .duration(time)
             ;
+}
 
+
+
+/**************** DRUG USE ********************/
+
+function infographSlideshow(num)
+{  
+    var id = "#info"+num++;
+    $(id).fadeIn(3000);
+    if(num <= 5)
+    {
+        setTimeout(function() {
+            console.log(id);
+            infographSlideshow(num);
+        },5000);
+    }
+    else
+    {
+        setTimeout(function(){$("#info1").animate({opacity:'0'})},500);
+        setTimeout(function(){$("#info2").animate({opacity:'0'})},800);
+        setTimeout(function(){$("#info3").animate({opacity:'0'})},1100);
+        setTimeout(function(){
+            $('#info1').hide();
+            $('#info2').hide();
+            $('#info3').hide();
+            $("#info4").css("border-radius","3px");
+        },2500);
+
+        setTimeout(function(){
+            $("#infograph").css('height','100px');
+            usProduction();
+        },3000)
+
+        setTimeout(function(){
+            drawBorderSeizures();
+        },10000);
+    }
 }
