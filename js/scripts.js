@@ -832,61 +832,6 @@ function setFlag(code)
     $("#countryFlag").attr('src','http://www.geonames.org/flags/x/'+code.toLowerCase()+'.gif');
 }
 
-/***** US Production *******/
-// function usProduction(data) {
-//     // Instantiate the map
-//     $('#usMap').highcharts2('Map', {
-//         title : {
-//             text : 'US Drug Production by State'
-//         },
-
-//         mapNavigation: {
-//             enabled: true,
-//             buttonOptions: {
-//                 verticalAlign: 'bottom'
-//             }
-//         },
-
-//         colorAxis: {
-//             min: 1,
-//             type: 'logarithmic',
-//             minColor: '#E6E7E8',
-//             maxColor: '#005645'
-//         },            
-
-//         plotOptions: {
-//             map: {
-//                 states: {
-//                     hover: {
-//                         color: '#EEDD66'
-//                     }
-//                 }
-//             }
-//         },            
-//         series : [{
-//             animation: true,
-//             data : data,
-//             mapData: Highcharts2.maps.us,
-//             joinBy: 'code',
-//             dataLabels: {
-//                 enabled: true,
-//                 color: 'white',
-//                 format: '{point.code}',
-//                 style: {
-//                     fontWeight: 'bold',
-//                     textShadow: '0 0 3px black',
-//                     textTransform: 'uppercase'
-//                 }
-//             },
-//             name: 'Production:',
-//             tooltip: {
-//                 pointFormat: '{point.state}: {point.value}/kgs'
-//             }
-//         }]
-//     });
-// };
-
-
 /***** MAP ZOOMING ******/
 function drawScatter(scale) {
     var values = [];
