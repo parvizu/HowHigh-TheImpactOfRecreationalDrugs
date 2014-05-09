@@ -27,14 +27,28 @@
 
 
         <div id="menu">
-            <div class="menuItem menuSection"></div>
+            <div class="menuItem menuSection" onClick="showPart(1);return false;"></div>
             <div class="menuItem pathItem" id="menuPath1"></div>
-            <div class="menuItem menuSection"></div>
+            <div class="menuItem menuSection" onClick="showPart(2);return false;"></div>
             <div class="menuItem pathItem" id="menuPath2"></div>
-            <div class="menuItem menuSection"></div>
+            <div class="menuItem menuSection" onClick="showPart(3);return false;"></div>
         </div>
-        <div id="part2" style="display:none;"></div>
-        <div id="part3">
+        
+        <div id="part1" >
+            <div id="usMap" style="width: 600px; height:400px; display: inline-block; display:;" ></div>    
+        </div>
+
+        <div id="part2" style="display:none;">
+            <a href="" onclick="worldCrime(1); return false;">US Production</a> | <a href="" onclick="worldCrime(2); return false;">Mexico Assaults</a> | <a href="" onclick="worldCrime(3); return false;">Mexico Extortions</a> | <a href="" onclick="worldCrime(4); return false;">Mexico Homicides</a> | <a href="" onclick="worldCrime(4); return false;">Mexico Kidnappings</a> | <a href="" onclick="worldCrime(4); return false;">Mexico Total Crimes</a>
+            <div id="borderMap" ></div>
+            <div id="borderSeizures"></div>
+            <div id="legalize"></div>
+            <div id="borderMap" style="display:;"></div>
+        </div>
+
+
+
+        <div id="part3"  style="display:none;">
             <div id="topRow">
                 <div id="left" style="display: inline-block;">
                     <a href="" onclick="showDrugs(1); return false;">Marijuana</a> <br>
@@ -54,19 +68,22 @@
                 <div id="bottomCenter" class="bottom">
                     <div id="flag"></div>
                     <h3 id="countryName"></h3>
+                    <img id="countryFlag" style="width:200px;">
                     <div id="countryRankings">
 
                     </div>
                 </div>
-                <div id="bottomRight" class="bottom"></div>
+                <div id="bottomRight" class="bottom">
+                    <div id="scatterPlot"></div>
+                    <div id="scatterScale" style="display: inline-block;">
+                        <a href="" onclick="drawScatter(0);return false;">Log</a><br>
+                        <a href="" onclick="drawScatter(1);return false;">Lin</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-    <a href="" onclick="worldCrime(1); return false;">US Production</a> | <a href="" onclick="worldCrime(2); return false;">Mexico Assaults</a> | <a href="" onclick="worldCrime(3); return false;">Mexico Extortions</a> | <a href="" onclick="worldCrime(4); return false;">Mexico Homicides</a> | <a href="" onclick="worldCrime(4); return false;">Mexico Kidnappings</a> | <a href="" onclick="worldCrime(4); return false;">Mexico Total Crimes</a>
-    <div id="borderMap" ></div>
-    <!-- <div id="usMap" style="width: 600px; height:400px; display: inline-block;" ></div> -->
-    <div id="scatterChart" style="width: 300px; height:400px; display: inline-block;"></div>
+    
 </body>
  <script type="text/javascript" src="js/scripts.js"></script>
 </html>

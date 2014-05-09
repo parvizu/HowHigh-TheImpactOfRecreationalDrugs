@@ -8,9 +8,21 @@
 	text-align: center;
 }
 
+#countryFlad
+{
+	width:200px;
+}
+
 #container
 {
 	height: 450px;
+}
+
+#legalize
+{
+
+	width: 800px;
+	height: 180px;
 }
 
 #bottomchart
@@ -21,8 +33,8 @@
 
 #borderMap 
 {
-	height:700px;
-	width:600px;
+	height: 800px;
+	width:700px;
 }
 
 #popup 
@@ -55,7 +67,18 @@
 #bottomCenter
 {
 	width: 250px;
-	background-color: silver;
+	vertical-align: top;
+}
+
+#scatterPlot
+{
+	width:400px;
+	height:200px;
+	display: inline-block;
+}
+
+#scatterScale
+{
 	vertical-align: top;
 }
 
