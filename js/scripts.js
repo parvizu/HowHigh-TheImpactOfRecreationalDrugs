@@ -359,7 +359,7 @@ $(document).ready(function() {
 
     $.getJSON("json/bubbleInstructions.json", function (data) {track = data;});
 
-    movePopup(300,200,500,300,'Please select the mode you want to use:<br><br><br><a style="margin-left:100px"href="" onclick="start(); showDrugs(1);  return false;">Directed</a> | <a href="" onclick="">Exploratory</a>',800);
+    movePopup(350,180,100,300,'<img src="img/logo.png" id="logo"><br><br><a style="margin-left:100px"href="" onclick="start(); showDrugs(1);  return false;">Directed</a>',800);
     //$('#popup').fadeIn(1500); 
     // drawBorderSeizures();
     // drawLegalizeMarijuana();
@@ -1409,7 +1409,7 @@ function showPart(num)
             $("#part1").show();
             $("#part2").hide();
             $("#part3").hide();
-            nextSection(1,40000);
+            nextSection(1,65000);
             part1Seen=1;
             break;
 
@@ -1561,7 +1561,7 @@ function nextSection(sect,time)
                 'fill':'lightgray'
             })
             .transition()
-            .attr('width',250)
+            .attr('width',120)
             .duration(time)
             ;
 }
@@ -1569,6 +1569,23 @@ function nextSection(sect,time)
 
 
 /**************** DRUG USE ********************/
+
+function infographStatic()
+{
+
+    $('#part2').hide();
+    $('#part3').hide();
+    $('#part1').show();
+    
+    $("#popup").hide();
+    $('#info1').hide();
+    $('#info2').hide();
+    $('#info3').hide();
+    $('#info4').fadeIn(1000);
+    usProduction();
+    $('#infoAll').fadeIn(1000);
+    drawBorderSeizures();
+}
 
 function infographSlideshow(num)
 {  
@@ -1612,12 +1629,27 @@ function infographSlideshow(num)
 
         setTimeout(function(){
             $('#infoAll').fadeIn(3000);
-        },6000)
+        },19000)
 
         setTimeout(function(){
             drawBorderSeizures();
             // movePopup(120,145,220,50,'% Drug seizures along borders',3000,'bbottomleft')
-        },10000);
+        },40000);
 
     }
 }
+
+
+function guidedPart2()
+{
+    $('#part1').fadeOut(2000);
+    setTimeout(function (){
+        $('#part3').hide(); 
+        $('#part2').fadeIn(1000);
+    },2100)
+
+    mexCrimes(6);
+
+}
+
+

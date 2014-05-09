@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>How High? - Flows</title>
+    <title>How High? - The cost of recreational drugs</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/flags32.css">
     <script type="text/javascript" src="js/d3.js"></script>
@@ -35,8 +35,9 @@
                 </tr>
                 <tr>
                     <td><img id="blefttop" style="margin-top:5px;" src="img/left.png"></td>
-                    <td colspan="3" rowspan="3" id="bubbleContent">Can't say much with so little code. Please post your code or, better yet, create a jsfiddle or codepen that duplicates the issue. </td>
-                    <td><img id="bleftbottom" style="margin-top:5px;" src="img/right.png"></td>
+                    <td colspan="3" rowspan="3" id="bubbleContent">
+                    </td>
+                    <td><img id="brighttop" style="margin-top:5px;" src="img/right.png"></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -44,7 +45,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td><img id="brighttop" style="margin-bottom:5px;" src="img/left.png"></td>
+                    <td><img id="bleftbottom" style="margin-bottom:5px;" src="img/left.png"></td>
                     
                     <td><img id="brightbottom" style="margin-bottom:5px;" src="img/right.png"></td>
                 </tr>
@@ -60,10 +61,12 @@
 
 
         <div id="menu">
-            <div class="menuItem menuSection" onClick="showPart(1);return false;"></div>
-            <div class="menuItem pathItem" id="menuPath1"></div>
-            <div class="menuItem menuSection" onClick="showPart(2);return false;"></div>
+            <div class="menuItem menuSection" onClick="location.reload();"></div>
+             <div class="menuItem pathItem" id="menuPath1"></div>
+            <div class="menuItem menuSection" onClick="infographStatic();return false;"></div>
             <div class="menuItem pathItem" id="menuPath2"></div>
+            <div class="menuItem menuSection" onClick="showPart(2);return false;"></div>
+            <div class="menuItem pathItem" id="menuPath3"></div>
             <div class="menuItem menuSection" onClick="showPart(3);return false;"></div>
         </div>
         
@@ -73,17 +76,22 @@
 
             <div id="useTop" align="center">
                 <div id="infograph">
-                    <img id="info1" style="width:900px;" src="img/isotype01M.png">
+                    <!-- <img id="info1" style="width:900px;" src="img/isotype01M.png">
                     <img id="info2" style="width:900px;" src="img/isotype02M.png">
                     <img id="info3" style="width:900px;" src="img/isotype03M.png">
-                    <img id="info4" style="width:900px;" src="img/isotype04M.png">
+                    <img id="info4" style="width:900px;" src="img/isotype04M.png"> -->
+                    <img id="info1" style="width:900px;" src="img/isotype01C.png">
+                    <img id="info2" style="width:900px;" src="img/isotype02C.png">
+                    <img id="info3" style="width:900px;" src="img/isotype03C.png">
+                    <img id="info4" style="width:900px;" src="img/isotype04C.png">
                 </div>
                 
                 
                 <div id="rightInfo">
                     <div id="usMap" style="width: 600px; display: inline-block; display:;" ></div><br>
 
-                    <img id="infoAll" src="img/people.png" style="width:600px; height:140px; display:none;">
+                    <!-- <img id="infoAll" src="img/people.png" style="width:600px; height:140px; display:none;"> -->
+                    <img id="infoAll" src="img/druguse.png" style="width:600px; height:140px; display:none;">
                 </div>
                 <div id="borderSeizures"></div>
             </div>   
