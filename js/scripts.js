@@ -168,6 +168,7 @@ var rankings = {
     }
 }
 
+var part1Seen=0;
 var crimeRankings ={
     'overall': {
         'countries':[
@@ -752,6 +753,9 @@ function drawBottomGraph(code, country)
                 text: 'kilograms'
             }
         },
+        credits: {
+            enabled: false
+        },
         exporting: { enabled: false },
         plotOptions: {
             column: {
@@ -780,7 +784,10 @@ function drawCrimeTrends(trendData) {
       },
       subtitle: {
           text: 'Drug Related Violent Crimes in Mexico'
-      },      
+      }, 
+      legend: {
+            enabled: false
+        },     
       xAxis: {
           title: {
             text: null
@@ -806,6 +813,10 @@ function drawCrimeTrends(trendData) {
             text: 'Numbers'
         }
     },
+    credits: {
+            enabled: false
+        },
+        exporting: { enabled: false },
     tooltip: {
       headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
       pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
@@ -815,7 +826,7 @@ function drawCrimeTrends(trendData) {
     },
     plotOptions: {
         series: {
-            cursor: 'pointer',
+            // cursor: 'pointer',
             events: {
                click: function(event) {getCrime(this.name);}
             }
@@ -1088,6 +1099,10 @@ function createCrimeData(data)
         legend: {
             enabled: false
         },
+        credits: {
+            enabled: false
+        },
+        exporting: { enabled: false },
 
         mapNavigation: {
             enabled: true,
@@ -1345,12 +1360,14 @@ function drawBorderSeizures()
             },
             series: [{
                 name: 'North border',
-                    data: [4, 20, 36, 42, 99],
-                    color: '#D52B1E'
+                    data: [4, 20, 36, 42, 99]
+                    // ,
+                    // color: '#D52B1E'
                 }, {
                     name: 'South border',
-                    data: [96, 80, 64, 58, 1],
-                    color: '#006643'
+                    data: [96, 80, 64, 58, 1]
+                    // ,
+                    // color: '#006643'
                 }]
         });     
 }
@@ -1361,12 +1378,17 @@ function drawBorderSeizures()
 function showPart(num)
 {
     console.log(num);
+
+    if(part1Seen ==0 )
+        infographSlideshow(1);
+
     switch(num)
     {
         case 1:
             $("#part1").show();
             $("#part2").hide();
             $("#part3").hide();
+            part1Seen=1;
             break;
 
         case 2:
@@ -1383,6 +1405,12 @@ function showPart(num)
             $("#part2").hide();
             $("#part3").show();
             break;
+
+        default:
+            $("#part1").show();
+            $("#part2").hide();
+            $("#part3").hide();
+            
     }
 }
 
@@ -1437,6 +1465,10 @@ function drawLegalizeMarijuana()
             legend: {
                 enabled: false
             },
+            credits: {
+                enabled: false
+            },
+            exporting: { enabled: false },
             plotOptions: {
                 area: {
                     fillColor: {
@@ -1518,12 +1550,16 @@ function nextSection(sect,time)
 
 function infographSlideshow(num)
 {  
+// <<<<<<< HEAD
     var text = ['This represents the entire US population',
                 '48% of all Americans have used illegal drugs in their lifetime',
                 '16% have used drugs in the past year',
                 '9.2% have used drugs in the past month'];
     var leftPos = [0, 0, 300, 650,870,950]
     console.log(num)
+// =======
+//     $("#infograph").fadeIn(3000);
+// >>>>>>> master
     var id = "#info"+num++;
     $(id).fadeIn(3000);
     if(num <= 5)
@@ -1554,8 +1590,13 @@ function infographSlideshow(num)
         },3000)
 
         setTimeout(function(){
+            $('#infoAll').fadeIn(3000);
+        },6000)
+
+        setTimeout(function(){
             drawBorderSeizures();
             movePopup(120,145,220,50,'% Drug seizures along borders',3000,'bbottomleft')
         },10000);
+
     }
 }
