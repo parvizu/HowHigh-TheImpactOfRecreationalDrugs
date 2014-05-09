@@ -476,7 +476,18 @@ function drawBorderMap()
             name: crimeStat,
                 point: {
                     events: {
-                        mouseOver: function() {console.log(this.code);}
+                        mouseOver: function() {$('#'+this.code)[0].style.backgroundColor = "rgba(0,0,0,0.2)";},
+                    
+                        mouseOut: function() {
+                            if($('#'+this.code)[0].rowIndex % 2 == 0)
+                            {
+                              $('#'+this.code)[0].style.backgroundColor = "rgba(0,0,0,0)";
+                            }
+                            else
+                            {
+                              $('#'+this.code)[0].style.backgroundColor = "#BCC6CC";
+                            }                            
+                        }
                     }
                 },            
             tooltip: {
@@ -487,7 +498,7 @@ function drawBorderMap()
     
     $('#mexCrimerankings tr').remove();
     $.each(mexCrime, function(index, data) {
-        if (data.state) {$('#mexCrimerankings').append('<tr><td>' + data.state + '</td><td>' + data.value + '</td></tr>');}
+        if (data.state) {$('#mexCrimerankings').append('<tr id=' + data.code + '><td>' + data.state + '</td><td>' + data.value + '</td></tr>');}
     });
 }
 
