@@ -489,8 +489,6 @@ function drawBorderMap()
 /***** US Production *******/
 function usProduction() {
     // Instantiate the map
-    // console.log(data)
-    // console.log(borderMap)
     $('#usMap').highcharts2('Map', {
         title : {
             text : 'US Drug Production by State'
@@ -536,7 +534,7 @@ function usProduction() {
             },
             name: 'Production:',
             tooltip: {
-                pointFormat: '{point.state}: {point.value}'
+                pointFormat: '{point.state}: {point.value} kgs'
             }
         }]
     });
@@ -835,58 +833,58 @@ function setFlag(code)
 }
 
 /***** US Production *******/
-function usProduction(data) {
-    // Instantiate the map
-    $('#usMap').highcharts2('Map', {
-        title : {
-            text : 'US Drug Production by State'
-        },
+// function usProduction(data) {
+//     // Instantiate the map
+//     $('#usMap').highcharts2('Map', {
+//         title : {
+//             text : 'US Drug Production by State'
+//         },
 
-        mapNavigation: {
-            enabled: true,
-            buttonOptions: {
-                verticalAlign: 'bottom'
-            }
-        },
+//         mapNavigation: {
+//             enabled: true,
+//             buttonOptions: {
+//                 verticalAlign: 'bottom'
+//             }
+//         },
 
-        colorAxis: {
-            min: 1,
-            type: 'logarithmic',
-            minColor: '#E6E7E8',
-            maxColor: '#005645'
-        },            
+//         colorAxis: {
+//             min: 1,
+//             type: 'logarithmic',
+//             minColor: '#E6E7E8',
+//             maxColor: '#005645'
+//         },            
 
-        plotOptions: {
-            map: {
-                states: {
-                    hover: {
-                        color: '#EEDD66'
-                    }
-                }
-            }
-        },            
-        series : [{
-            animation: true,
-            data : data,
-            mapData: Highcharts2.maps.us,
-            joinBy: 'code',
-            dataLabels: {
-                enabled: true,
-                color: 'white',
-                format: '{point.code}',
-                style: {
-                    fontWeight: 'bold',
-                    textShadow: '0 0 3px black',
-                    textTransform: 'uppercase'
-                }
-            },
-            name: 'Production:',
-            tooltip: {
-                pointFormat: '{point.state}: {point.value}/kgs'
-            }
-        }]
-    });
-};
+//         plotOptions: {
+//             map: {
+//                 states: {
+//                     hover: {
+//                         color: '#EEDD66'
+//                     }
+//                 }
+//             }
+//         },            
+//         series : [{
+//             animation: true,
+//             data : data,
+//             mapData: Highcharts2.maps.us,
+//             joinBy: 'code',
+//             dataLabels: {
+//                 enabled: true,
+//                 color: 'white',
+//                 format: '{point.code}',
+//                 style: {
+//                     fontWeight: 'bold',
+//                     textShadow: '0 0 3px black',
+//                     textTransform: 'uppercase'
+//                 }
+//             },
+//             name: 'Production:',
+//             tooltip: {
+//                 pointFormat: '{point.state}: {point.value}/kgs'
+//             }
+//         }]
+//     });
+// };
 
 
 /***** MAP ZOOMING ******/
