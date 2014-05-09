@@ -330,8 +330,10 @@ $(document).ready(function() {
     $.getJSON("json/countrySeizuresTotal.json", function (data) { seizuresTotal = getValidCountries(data);}); 
     $.getJSON("json/usStateProduction.json", function (data) {usMarijuana = data;usProduction(data);});
     
-    //movePopup(300,200,500,300,'Please select the mode you want to use:<br><a href="" onclick="start(); showDrugs(1);  return false;">Directed</a> | <a href="" onclick="">Exploratory</a>',800);
-    //$('#popup').fadeIn(1500); 
+    // movePopup(300,200,500,300,'Please select the mode you want to use:<br><a href="" onclick="start(); showDrugs(1);  return false;">Directed</a> | <a href="" onclick="">Exploratory</a>',800);
+    // $('#popup').fadeIn(1500); 
+    drawBorderSeizures();
+    drawLegalizeMarijuana();
 });
 
 function start()
@@ -374,7 +376,12 @@ function drawBorderMap()
         title : {
             text : 'Habitat of the Rusty Blackbird'
         },
-
+        mapNavigation: {
+            enabled: true,
+            buttonOptions: {
+                verticalAlign: 'bottom'
+            }
+        },
         subtitle : {
             text : 'An example of a distribution map in Highcharts.<br/>' +
                 'Source: <a href="http://en.wikipedia.org/wiki/File:Euphagus_carolinus_map.svg">Wikipedia</a>.'
@@ -599,6 +606,8 @@ function getRankings(code)
 function drawBottomGraph(code, country)
 {
     $('#bottomchart').html("");
+
+    setFlag(code);
     $('#bottomchart').highcharts({
         chart: {
             type: 'column'
@@ -639,6 +648,11 @@ function drawBottomGraph(code, country)
                 data: getDrugs(code)
             }]
     });
+}
+
+function setFlag(code)
+{
+    $("#countryFlag").attr('src','http://www.geonames.org/flags/x/'+code.toLowerCase()+'.gif');
 }
 
 /***** US Production *******/
@@ -696,11 +710,14 @@ function usProduction(data) {
 };
 
 /***** MAP ZOOMING ******/
-function drawScatter() {
+function drawScatter(scale) {
     var values = [];
-    // var news = [];
-    // console.log(crimeTotal);
-    // console.log(seizuresTotal);
+    var scaleType;
+    if(scale ==1)
+        scaleType = 'linear';
+    else
+        scaleType = 'logarithmic';
+
     $.each(crimeTotal, function(index,value1){
         $.each(seizuresTotal, function (index,value2){
             if(value1.code == value2.code) {
@@ -716,7 +733,7 @@ function drawScatter() {
         });
     });
 
-    $('#scatterChart').highcharts({
+    $('#scatterPlot').highcharts({
         chart: {
             type: 'scatter',
             zoomType: 'xy'
@@ -735,12 +752,17 @@ function drawScatter() {
             showLastLabel: true
         },
         yAxis: {
-            type: 'logarithmic',
+            min: 1,
+            type: scaleType,
             title: {
-                text: 'Total Seizures'
+                text: 'Total Seizures (kgs)'
             }
         },
+        exporting: { enabled: false },
         legend: {
+            enabled: false
+        },
+        credits: {
             enabled: false
         },
         plotOptions: {
@@ -870,6 +892,7 @@ function getCrimesData(code)
 function drawBottomGraphCrimes(code, country)
 {
     $('#bottomchart').html("");
+    setFlag(code);
     $('#bottomchart').highcharts({
         chart: {
             type: 'column'
@@ -1108,6 +1131,206 @@ function movePopup(x,y,w,h,text,time)
         height: h
     },time,function() { $('#popup').html(text);});
 }
+
+
+function drawBorderSeizures()
+{
+    $('#borderSeizures').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Stacked column chart'
+            },
+            xAxis: {
+                categories: ['Marijuana','Cocaine','Meth','Heroin','MDMA']
+            },
+            yAxis: {
+                min: 0,
+                max: 100,
+                title: {
+                    text: '% of Drug Seizures along the US Borders'
+                },
+                stackLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                    }
+                }
+            },
+            credits: {
+                enabled: false
+            },
+            exporting: { enabled: false },
+            legend: {
+                align: 'center',
+                x: 100,
+                verticalAlign: 'bottom',
+                y: -300,
+                floating: true,
+                backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                borderColor: '#CCC',
+                borderWidth: 1,
+                shadow: false
+            },
+            tooltip: {
+                formatter: function() {
+                    return '<b>'+ this.x +'</b><br/>'+
+                        this.series.name +': '+ this.y + ' %';
+                }
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'normal',
+                    dataLabels: {
+                        enabled: true,
+                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                        style: {
+                            textShadow: '0 0 3px black, 0 0 3px black'
+                        }
+                    }
+                }
+            },
+            series: [{
+                name: 'North border',
+                    data: [4, 20, 36, 42, 99],
+                    color: '#D52B1E'
+                }, {
+                    name: 'South border',
+                    data: [96, 80, 64, 58, 1],
+                    color: '#006643'
+                }]
+        });     
+}
+
+
+/******************* OVERAL CONTROLS *********************/
+
+function showPart(num)
+{
+    console.log(num);
+    switch(num)
+    {
+        case 1:
+            $("#part1").show();
+            $("#part2").hide();
+            $("#part3").hide();
+            break;
+
+        case 2:
+            $("#part1").hide();
+            $("#part2").show();
+            $("#part3").hide();
+            break;
+
+        case 3:
+            $("#part1").hide();
+            $("#part2").hide();
+            $("#part3").show();
+            break;
+    }
+}
+
+
+
+
+/******************* US MEXICO *************************/
+
+function drawLegalizeMarijuana()
+{
+    $('#legalize').highcharts({
+            chart: {
+                zoomType: 'x'
+            },
+            title: {
+                text: 'Legalization of Marijuana'
+            },
+            subtitle: {
+                text: document.ontouchstart === undefined ?
+                    'Click and drag in the plot area to zoom in' :
+                    'Pinch the chart to zoom in'
+            },
+            xAxis: {
+                categories: [
+                    1969    ,
+                    1972    ,
+                    1973    ,
+                    1977    ,
+                    1979    ,
+                    1980    ,
+                    1985    ,
+                    1995    ,
+                    2000    ,
+                    2001    ,
+                    2003    ,
+                    2005    ,
+                    2009    ,
+                    2010    ,
+                    2011    ,
+                    2012    ,
+                    2013
+                    ],
+                type: ''
+               // minRange: 14 * 24 * 3600000 // fourteen days
+
+            },
+            yAxis: {
+                title: {
+                    text: '% of population'
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            plotOptions: {
+                area: {
+                    fillColor: {
+                        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
+                        stops: [
+                            [0, Highcharts.getOptions().colors[0]],
+                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                        ]
+                    },
+                    marker: {
+                        radius: 2
+                    },
+                    lineWidth: 1,
+                    states: {
+                        hover: {
+                            lineWidth: 1
+                        }
+                    },
+                    threshold: null
+                }
+            },
+    
+            series: [{
+                type: 'area',
+                name: 'Yes',
+                data: [
+                    12  ,
+                    15  ,
+                    16  ,
+                    28  ,
+                    25  ,
+                    25  ,
+                    23  ,
+                    25  ,
+                    31  ,
+                    34  ,
+                    34  ,
+                    36  ,
+                    44  ,
+                    46  ,
+                    50  ,
+                    48  ,
+                    58  
+                ]
+            }]
+        });
+}
+
 
 /******************* D3 Transitions ***********************/
 
