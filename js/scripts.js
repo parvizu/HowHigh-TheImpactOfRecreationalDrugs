@@ -360,7 +360,7 @@ $(document).ready(function() {
     $.getJSON("json/bubbleInstructions.json", function (data) {track = data;});
 
 
-    movePopup(350,180,100,300,'<img src="img/logo.png" id="logo"><br><br><button class="minimal" style="margin-left:80px"href="" onclick="start(); showDrugs(1);  return false;">Directed</button>',800);
+    movePopup(350,180,100,300,'<img src="img/logo.png" id="logo"><br><br><button class="minimal" style="margin-left:120px"href="" onclick="start(); showDrugs(1);  return false;">Let\'s start</button>',800);
 
     //$('#popup').fadeIn(1500); 
     // drawBorderSeizures();
@@ -1586,9 +1586,14 @@ function nextSection(sect,time)
                 'fill':'lightgray'
             })
             .transition()
-            .attr('width',120)
+            .attr('width',300)
             .duration(time)
             ;
+}
+
+function hideBubble()
+{
+    $('#popup').fadeOut(600);
 }
 
 

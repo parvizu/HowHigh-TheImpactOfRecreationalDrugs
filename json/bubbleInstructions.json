@@ -148,7 +148,7 @@
 	"y":510,
 	"w":200,
 	"h":0,
-	"t":"Feel free to explore this charts. When you are ready <a href='' onclick='guidedPart2(); return false;'>click here</a>",
+	"t":"Feel free to explore this charts and the rest of our visualizations. <br><img src='img/usB.png' onClick='hideBubble();infographStatic();return false;'><img src='img/border.png' onClick='hideBubble();showPart(2);return false;'><img src='img/global.png' onClick='hideBubble();showPart(3);return false;'>",
 	"d":6000,
 	"a":""
 }

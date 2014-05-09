@@ -61,13 +61,17 @@
 
 
         <div id="menu">
-            <div class="menuItem menuSection" onClick="location.reload();"></div>
-             <div class="menuItem pathItem" id="menuPath1"></div>
-            <div class="menuItem menuSection" onClick="infographStatic();return false;"></div>
-            <div class="menuItem pathItem" id="menuPath2"></div>
-            <div class="menuItem menuSection" onClick="showPart(2);return false;"></div>
-            <div class="menuItem pathItem" id="menuPath3"></div>
-            <div class="menuItem menuSection" onClick="showPart(3);return false;"></div>
+            <div style="min-width:150px; display:inline-block;" ></div>
+            <img src="img/logo.png" onclick="location.reload();" style="height:50px; display:inline-block;"> 
+            <div id="progressBar" style="min-width:200px; display:inline-block;" ></div>
+            <div class="menuItem pathItem" id="menuPath1"></div>
+            <div style="min-width:100px; display:inline-block;" ></div>
+            <div id="sect1" class="menuItem menuSection" onClick="location.reload();"><img src="img/play.png"></div>
+            <div id="sect2"class="menuItem menuSection" onClick="infographStatic();return false;"><img src="img/usB.png"></div>
+            <!-- <div class="menuItem pathItem" id="menuPath2"></div> -->
+            <div id="sect3"class="menuItem menuSection" onClick="showPart(2);return false;"><img src="img/border.png"></div>
+            <!-- <div class="menuItem pathItem" id="menuPath3"></div> -->
+            <div id="sect4"class="menuItem menuSection" onClick="showPart(3);return false;"><img src="img/global.png"></div>
         </div>
         
         <div id="part1" >
