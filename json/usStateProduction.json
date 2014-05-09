@@ -137,7 +137,7 @@
   {
     "code":"nd",
     "state":"North Dakota",
-    "value":1
+    "value":6841
   },
   {
     "code":"ne",
@@ -192,32 +192,32 @@
   {
     "code":"ri",
     "state":"Rhode Island",
-    "value":1
+    "value":701
   },
   {
     "code":"sc",
     "state":"South Carolina ",
-    "value":1
+    "value":40228
   },
   {
     "code":"sd",
     "state":"South Dakota",
-    "value":1
+    "value":2173
   },
   {
     "code":"tn",
     "state":"Tennessee ",
-    "value":1
+    "value":1352092
   },
   {
     "code":"tx",
     "state":"Texas ",
-    "value":1
+    "value":109308
   },
   {
     "code":"ut",
     "state":"Utah ",
-    "value":1
+    "value":8196
   },
   {
     "code":"va",
@@ -227,7 +227,7 @@
   {
     "code":"vt",
     "state":"Vermont ",
-    "value":1
+    "value":8193
   },
   {
     "code":"wa",
@@ -247,6 +247,6 @@
   {
     "code":"wy",
     "state":"Wyoming ",
-    "value":1
+    "value":589
   }
 ]

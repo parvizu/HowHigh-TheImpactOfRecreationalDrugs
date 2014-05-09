@@ -1,0 +1,252 @@
+[
+  {
+    "code":"AK",
+    "state":"Alaska ",
+    "value":2709
+  },
+  {
+    "code":"AL",
+    "state":"Alabama ",
+    "value":5374
+  },
+  {
+    "code":"AR",
+    "state":"Arkansas ",
+    "value":3161
+  },
+  {
+    "code":"AZ",
+    "state":"Arizona ",
+    "value":19680
+  },
+  {
+    "code":"CA",
+    "state":"California ",
+    "value":2903887
+  },
+  {
+    "code":"CO",
+    "state":"Colorado ",
+    "value":16604
+  },
+  {
+    "code":"CT",
+    "state":"Connecticut ",
+    "value":1096
+  },
+  {
+    "code":"DE",
+    "state":"Deleware ",
+    "value":305
+  },
+  {
+    "code":"FL",
+    "state":"Florida ",
+    "value":46756
+  },
+  {
+    "code":"GA",
+    "state":"Georgia ",
+    "value":10130
+  },
+  {
+    "code":"HI",
+    "state":"Hawaii ",
+    "value":32289
+  },
+  {
+    "code":"IA",
+    "state":"Iowa ",
+    "value":181
+  },
+  {
+    "code":"ID",
+    "state":"Idaho ",
+    "value":10699
+  },
+  {
+    "code":"IL",
+    "state":"Illinois ",
+    "value":7765
+  },
+  {
+    "code":"IN",
+    "state":"Indiana ",
+    "value":96510
+  },
+  {
+    "code":"KS",
+    "state":"Kansas ",
+    "value":8340
+  },
+  {
+    "code":"KY",
+    "state":"Kentucky ",
+    "value":443788
+  },
+  {
+    "code":"LA",
+    "state":"Louisiana ",
+    "value":48007
+  },
+  {
+    "code":"MA",
+    "state":"Massachusetts ",
+    "value":413
+  },
+  {
+    "code":"MD",
+    "state":"Maryland ",
+    "value":2606
+  },
+  {
+    "code":"ME",
+    "state":"Maine ",
+    "value":718
+  },
+  {
+    "code":"MI",
+    "state":"Michigan ",
+    "value":56086
+  },
+  {
+    "code":"MN",
+    "state":"Minnesota ",
+    "value":6534
+  },
+  {
+    "code":"MO",
+    "state":"Missouri ",
+    "value":2303
+  },
+  {
+    "code":"MS",
+    "state":"Mississippi ",
+    "value":2187
+  },
+  {
+    "code":"MT",
+    "state":"Montana ",
+    "value":750
+  },
+  {
+    "code":"NC",
+    "state":"North Carolina ",
+    "value":9174
+  },
+  {
+    "code":"ND",
+    "state":"North Dakota",
+    "value":6841
+  },
+  {
+    "code":"NE",
+    "state":"Nebraska ",
+    "value":5213
+  },
+  {
+    "code":"NH",
+    "state":"New Hampshire ",
+    "value":300
+  },
+  {
+    "code":"NJ",
+    "state":"New Jersey ",
+    "value":727
+  },
+  {
+    "code":"NM",
+    "state":"New Mexico ",
+    "value":1737
+  },
+  {
+    "code":"NV",
+    "state":"Nevada ",
+    "value":12954
+  },
+  {
+    "code":"NY",
+    "state":"New York ",
+    "value":19290
+  },
+  {
+    "code":"OH",
+    "state":"Ohio ",
+    "value":22616
+  },
+  {
+    "code":"OK",
+    "state":"Oklahoma ",
+    "value":11182
+  },
+  {
+    "code":"OR",
+    "state":"Oregon ",
+    "value":27988
+  },
+  {
+    "code":"PA",
+    "state":"Pennsylvania ",
+    "value":5757
+  },
+  {
+    "code":"RI",
+    "state":"Rhode Island",
+    "value":701
+  },
+  {
+    "code":"SC",
+    "state":"South Carolina ",
+    "value":40228
+  },
+  {
+    "code":"SD",
+    "state":"South Dakota",
+    "value":2173
+  },
+  {
+    "code":"TN",
+    "state":"Tennessee ",
+    "value":1352092
+  },
+  {
+    "code":"TX",
+    "state":"Texas ",
+    "value":109308
+  },
+  {
+    "code":"UT",
+    "state":"Utah ",
+    "value":8196
+  },
+  {
+    "code":"VA",
+    "state":"Virginia ",
+    "value":12205
+  },
+  {
+    "code":"VT",
+    "state":"Vermont ",
+    "value":8193
+  },
+  {
+    "code":"WA",
+    "state":"Washington ",
+    "value":40733
+  },
+  {
+    "code":"WI",
+    "state":"Wisconsin ",
+    "value":8347
+  },
+  {
+    "code":"WV",
+    "state":"West Virginia ",
+    "value":158383
+  },
+  {
+    "code":"WY",
+    "state":"Wyoming ",
+    "value":589
+  }
+]
