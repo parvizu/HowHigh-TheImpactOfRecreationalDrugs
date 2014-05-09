@@ -1,9 +1,8 @@
-var base,cocaine, marijuana, meth, heroin,rnkMj,rnkHer,rnkMeth,rnkCoke, borderMap,crime,bubbles=[]; 
+var track,base,cocaine, marijuana, meth, heroin,rnkMj,rnkHer,rnkMeth,rnkCoke, borderMap,crime,bubbles=[]; 
 var mexicoCrimeAssaults,mexicoCrimeExtortions,mexCrime,mexicoCrimeHomicides,mexicoCrimeKidnappings,mexicoCrimeTotal,crimeStat;
 var crimeUse, crimeTraffick,crimeTotal;
 var statflag = 0;
 var selectedCountry =['',''];
-
 var countryRankings ={};
 var rankings = {
     "cocaine": {
@@ -167,7 +166,6 @@ var rankings = {
         "rankings":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
     }
 }
-
 var part1Seen=0;
 var crimeRankings ={
     'overall': {
@@ -359,10 +357,12 @@ $(document).ready(function() {
     $.getJSON("json/mexicoCrimeKidnappings.json", function (data) {mexicoCrimeKidnappings = getValidCountries(data);});
     $.getJSON("json/mexicoCrimeTotal.json", function (data) {mexicoCrimeTotal = getValidCountries(data);});
 
-    movePopup(300,200,500,300,'Please select the mode you want to use:<br><a href="" onclick="start(); showDrugs(1);  return false;">Directed</a> | <a href="" onclick="">Exploratory</a>',800);
+    $.getJSON("json/bubbleInstructions.json", function (data) {track = data;});
+
+    movePopup(300,200,500,300,'Please select the mode you want to use:<br><br><br><a style="margin-left:100px"href="" onclick="start(); showDrugs(1);  return false;">Directed</a> | <a href="" onclick="">Exploratory</a>',800);
     //$('#popup').fadeIn(1500); 
     // drawBorderSeizures();
-    drawLegalizeMarijuana();
+    // drawLegalizeMarijuana();
     //usProduction();
 
 });
@@ -370,7 +370,23 @@ $(document).ready(function() {
 function start()
 {
     //$('#popup').fadeOut(400);
-    movePopup();
+    //movePopup();
+
+    showPart(1);
+    command(0,1000);
+
+}
+
+function command(i,time)
+{
+    var obj = track[i];
+    setTimeout(function() { 
+        movePopup(obj.x,obj.y,obj.w,obj.h,obj.t,650,obj.a);
+        i++;
+        console.log(i);
+        if(i<=track.length)
+            command(i,obj.d)
+    },time);
 }
 
 function getCrime(crimeName) {
@@ -1288,8 +1304,8 @@ function movePopup(x,y,w,h,text,time,arrow)
     }
     $("#bubbleContent").css('width',w);  
     $('#popup').animate({
-        left:100+x+"px",
-        top: y+"px",
+        left:x+"px",
+        top:y+"px",
     },time);
 }
 
@@ -1347,10 +1363,10 @@ function drawBorderSeizures()
             exporting: { enabled: false },
             legend: {
                 align: 'center',
-                x: 100,
+                // x: 50,
                 verticalAlign: 'bottom',
-                y: -300,
-                floating: true,
+                // y: 100,
+                // floating: true,
                 backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
                 borderColor: '#CCC',
                 borderWidth: 1,
@@ -1404,6 +1420,7 @@ function showPart(num)
             $("#part1").show();
             $("#part2").hide();
             $("#part3").hide();
+            nextSection(1,40000);
             part1Seen=1;
             break;
 
@@ -1552,7 +1569,7 @@ function nextSection(sect,time)
                 'y':14,
                 'width':1,
                 'height':11,
-                'fill':'teal'
+                'fill':'lightgray'
             })
             .transition()
             .attr('width',250)
@@ -1566,22 +1583,21 @@ function nextSection(sect,time)
 
 function infographSlideshow(num)
 {  
-// <<<<<<< HEAD
-    var text = ['This represents the entire US population',
-                '48% of all Americans have used illegal drugs in their lifetime',
-                '16% have used drugs in the past year',
-                '9.2% have used drugs in the past month'];
-    var leftPos = [0, 0, 300, 650,870,950]
-    console.log(num)
-// =======
+
+    // var text = ['This represents the entire US population',
+    //             '48% of all Americans have used illegal drugs in their lifetime',
+    //             '16% have used drugs in the past year',
+    //             '9.2% have used drugs in the past month'];
+    // var leftPos = [0, 0, 300, 650,870,950]
+       // console.log(num)
+
     $("#infograph").fadeIn(3000);
-// >>>>>>> master
     var id = "#info"+num++;
     $(id).fadeIn(3000);
     if(num <= 5)
     {   
         
-        movePopup(leftPos[num],(150 + ((num-2)*57)),270,70,text[num-2],3000,'btopleft')
+        // movePopup(leftPos[num],(150 + ((num-2)*57)),270,70,text[num-2],3000,'btopleft')
         setTimeout(function() {
             console.log(id);
             infographSlideshow(num);
@@ -1601,7 +1617,7 @@ function infographSlideshow(num)
 
         setTimeout(function(){
             // $("#infograph").css('height','100px');
-            movePopup(640,400,200,30,'Marijuana Production by State',3000,'brighttop')
+            // movePopup(640,400,200,30,'Marijuana Production by State',3000,'brighttop')
             usProduction();
         },3000)
 
@@ -1611,7 +1627,7 @@ function infographSlideshow(num)
 
         setTimeout(function(){
             drawBorderSeizures();
-            movePopup(120,145,220,50,'% Drug seizures along borders',3000,'bbottomleft')
+            // movePopup(120,145,220,50,'% Drug seizures along borders',3000,'bbottomleft')
         },10000);
 
     }
