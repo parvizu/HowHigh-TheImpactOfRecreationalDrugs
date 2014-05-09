@@ -473,7 +473,10 @@ function drawBorderMap()
                     }
                 }
             },
-        },            
+        },
+        credits: {
+            enabled: false
+        },                    
         series : [{
             animation: true,
             data : mexCrime,
@@ -492,7 +495,7 @@ function drawBorderMap()
             name: crimeStat,
                 point: {
                     events: {
-                        mouseOver: function() {$('#'+this.code)[0].style.backgroundColor = "rgba(0,0,0,0.2)";},
+                        mouseOver: function() {$('#'+this.code)[0].style.backgroundColor = "#EEDD66";},
                     
                         mouseOut: function() {
                             if($('#'+this.code)[0].rowIndex % 2 == 0)
@@ -508,8 +511,7 @@ function drawBorderMap()
                 },            
             tooltip: {
                 pointFormat: '{point.state}: {point.value} crimes'
-            },
-            credits: {enabled:false}
+            }
         }]
     });
     
@@ -552,7 +554,10 @@ function usProduction() {
                     }
                 }
             }
-        },            
+        },
+        credits: {
+            enabled: false
+        },                    
         series : [{
             animation: true,
             data : usMarijuana,
@@ -571,8 +576,7 @@ function usProduction() {
             name: 'Production:',
             tooltip: {
                 pointFormat: '{point.state}: {point.value} kgs'
-            },
-            credits: {enabled:false}
+            }
         }]
     });
 };
@@ -655,8 +659,11 @@ function drawRanking(title,countries,values,color)
             type: 'bar'
         },
         title: {
-            text: 'Top 20 Countries'
+            text: null
         },
+        subtitle: {
+            text: 'Top 20 Countries'
+        },        
         xAxis: {
             categories: countries,
             title: {
@@ -910,6 +917,9 @@ function drawScatter(scale) {
             zoomType: 'xy'
         },
         title: {
+            text: null
+        },
+        subtitle: {
             text: 'Crimes Versus Seizures'
         },
         xAxis: {
@@ -1601,7 +1611,7 @@ function infographSlideshow(num)
         
         // movePopup(leftPos[num],(150 + ((num-2)*57)),270,70,text[num-2],3000,'btopleft')
         setTimeout(function() {
-            console.log(id);
+            // console.log(id);
             infographSlideshow(num);
         },5000);
     }

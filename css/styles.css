@@ -34,7 +34,7 @@
 
 #borderMap 
 {
-	height: 450px;
+	height: 550px;
 	width:600px;
 }
 
@@ -151,7 +151,7 @@
 	/*background: #336ca6;*/
 }
 .flat-table-1 tr:hover {
-	background: rgba(0,0,0,0.2);
+	background: #EEDD66;
 }
 .flat-table-2 tr:hover {
 	background: rgba(0,0,0,0.2);
