@@ -1,162 +1,194 @@
 [
   {
-    "code":"AGU",
-    "state":"Aguascalientes",
-    "value":1
-  },
-  {
-    "code":"BCN",
-    "state":"Baja California",
-    "value":33
-  },
-  {
-    "code":"BCS",
-    "state":"Baja California Sur",
-    "value":0
-  },
-  {
-    "code":"CAM",
-    "state":"Campeche",
-    "value":1
-  },
-  {
-    "code":"CHP",
-    "state":"Chiapas",
-    "value":12
-  },
-  {
-    "code":"CHH",
-    "state":"Chihuahua",
-    "value":32
-  },
-  {
-    "code":"COA",
-    "state":"Coahuila",
-    "value":30
-  },
-  {
-    "code":"COL",
-    "state":"Colima",
-    "value":3
-  },
-  {
-    "code":"DIF",
-    "state":"Federal District",
-    "value":60
-  },
-  {
-    "code":"DUR",
-    "state":"Durango",
-    "value":21
-  },
-  {
-    "code":"MEX",
-    "state":"Edo Mexico",
-    "value":191
-  },
-  {
-    "code":"GUA",
-    "state":"Guanajuato",
-    "value":17
+    "code":"TAM",
+    "state":"Tamaulipas",
+    "value":211,
+    "ranking":1
   },
   {
     "code":"GRO",
     "state":"Guerrero",
-    "value":207
-  },
-  {
-    "code":"HID",
-    "state":"Hidalgo",
-    "value":21
-  },
-  {
-    "code":"JAL",
-    "state":"Jalisco",
-    "value":69
+    "value":207,
+    "ranking":2
   },
   {
     "code":"MIC",
-    "state":"Michoac·n",
-    "value":196
+    "state":"Michoacán",
+    "value":196,
+    "ranking":3
+  },
+  {
+    "code":"MEX",
+    "state":"Edo Mexico",
+    "value":191,
+    "ranking":4
   },
   {
     "code":"MOR",
     "state":"Morelos",
-    "value":150
-  },
-  {
-    "code":"NAY",
-    "state":"Nayarit",
-    "value":5
-  },
-  {
-    "code":"NLE",
-    "state":"Nuevo LeÛn",
-    "value":46
-  },
-  {
-    "code":"OAX",
-    "state":"Oaxaca",
-    "value":45
-  },
-  {
-    "code":"PUE",
-    "state":"Puebla",
-    "value":33
-  },
-  {
-    "code":"QUE",
-    "state":"QuerÈtaro",
-    "value":6
-  },
-  {
-    "code":"ROO",
-    "state":"Quintana Roo",
-    "value":12
-  },
-  {
-    "code":"SLP",
-    "state":"San Luis PotosÌ",
-    "value":19
-  },
-  {
-    "code":"SIN",
-    "state":"Sinaloa",
-    "value":32
-  },
-  {
-    "code":"SON",
-    "state":"Sonora",
-    "value":11
-  },
-  {
-    "code":"TAB",
-    "state":"Tabasco",
-    "value":104
-  },
-  {
-    "code":"TAM",
-    "state":"Tamaulipas",
-    "value":211
-  },
-  {
-    "code":"TLA",
-    "state":"Tlaxcala",
-    "value":2
+    "value":150,
+    "ranking":5
   },
   {
     "code":"VER",
     "state":"Veracruz",
-    "value":109
+    "value":109,
+    "ranking":6
   },
   {
-    "code":"YUC",
-    "state":"Yucat·n",
-    "value":1
+    "code":"TAB",
+    "state":"Tabasco",
+    "value":104,
+    "ranking":7
+  },
+  {
+    "code":"JAL",
+    "state":"Jalisco",
+    "value":69,
+    "ranking":8
+  },
+  {
+    "code":"DIF",
+    "state":"Federal District",
+    "value":60,
+    "ranking":9
+  },
+  {
+    "code":"NLE",
+    "state":"Nuevo León",
+    "value":46,
+    "ranking":10
+  },
+  {
+    "code":"OAX",
+    "state":"Oaxaca",
+    "value":45,
+    "ranking":11
+  },
+  {
+    "code":"BCN",
+    "state":"Baja California",
+    "value":33,
+    "ranking":12
+  },
+  {
+    "code":"PUE",
+    "state":"Puebla",
+    "value":33,
+    "ranking":13
+  },
+  {
+    "code":"CHH",
+    "state":"Chihuahua",
+    "value":32,
+    "ranking":14
+  },
+  {
+    "code":"SIN",
+    "state":"Sinaloa",
+    "value":32,
+    "ranking":15
+  },
+  {
+    "code":"COA",
+    "state":"Coahuila",
+    "value":30,
+    "ranking":16
+  },
+  {
+    "code":"DUR",
+    "state":"Durango",
+    "value":21,
+    "ranking":17
+  },
+  {
+    "code":"HID",
+    "state":"Hidalgo",
+    "value":21,
+    "ranking":18
+  },
+  {
+    "code":"SLP",
+    "state":"San Luis Potosí",
+    "value":19,
+    "ranking":19
   },
   {
     "code":"ZAC",
     "state":"Zacatecas",
-    "value":19
+    "value":19,
+    "ranking":20
+  },
+  {
+    "code":"GUA",
+    "state":"Guanajuato",
+    "value":17,
+    "ranking":21
+  },
+  {
+    "code":"CHP",
+    "state":"Chiapas",
+    "value":12,
+    "ranking":22
+  },
+  {
+    "code":"ROO",
+    "state":"Quintana Roo",
+    "value":12,
+    "ranking":23
+  },
+  {
+    "code":"SON",
+    "state":"Sonora",
+    "value":11,
+    "ranking":24
+  },
+  {
+    "code":"QUE",
+    "state":"Querétaro",
+    "value":6,
+    "ranking":25
+  },
+  {
+    "code":"NAY",
+    "state":"Nayarit",
+    "value":5,
+    "ranking":26
+  },
+  {
+    "code":"COL",
+    "state":"Colima",
+    "value":3,
+    "ranking":27
+  },
+  {
+    "code":"TLA",
+    "state":"Tlaxcala",
+    "value":2,
+    "ranking":28
+  },
+  {
+    "code":"AGU",
+    "state":"Aguascalientes",
+    "value":1,
+    "ranking":29
+  },
+  {
+    "code":"CAM",
+    "state":"Campeche",
+    "value":1,
+    "ranking":30
+  },
+  {
+    "code":"YUC",
+    "state":"Yucatán",
+    "value":1,
+    "ranking":31
+  },
+  {
+    "code":"BCS",
+    "state":"Baja California Sur",
+    "value":0,
+    "ranking":32
   }
 ]
