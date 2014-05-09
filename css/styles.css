@@ -39,13 +39,8 @@
 
 #popup 
 {
-	z-index: 10;
-	background-color: rgba(0,0,0,.4);
-	width:200px;
-	height:100px;
+	z-index: 100;
 	position: absolute;
-	border-radius: 5px;
-
 }
 
 #footerRow
@@ -111,3 +106,44 @@
 .f32 .flag {
 	vertical-align: middle !important;
 }
+
+/*Bubble styling*/
+
+#bubble{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#bubble img
+{
+	opacity: .6;
+}
+
+#bubbleContent
+{
+	min-width:100px;
+	background-color: rgba(0,0,0,.6);
+	border-radius:5px;
+	margin:0px;
+	padding:10px;
+	max-width: 400px;
+	color:white;
+}
+
+#bubble tr, #bubble td
+{
+	margin:0px;
+	border: 0px;
+}
+
+#bubble img
+{
+	display:inline-block;
+	margin:0px;
+}
+
+
+
+
+
+

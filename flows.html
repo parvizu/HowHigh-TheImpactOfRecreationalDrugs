@@ -17,13 +17,47 @@
 </head>
 <body>
     <div>
-        || <a href="" onclick="zoom('MX'); return false;">Zoom to Mexico</a> | <a href="" onclick="zoomBorder(); return false;">Zoom to border</a> || <a href="" onclick="nextSection(1,20000); return false;">Transition 1</a> | <a href="" onclick="nextSection(2,40000); return false;">Transition 2</a> ||  <a href="" onclick="resize(); return false;">Resize</a> | <a href="" onclick="showPopup(); return false;">Move</a>  || <a href="" onclick="fadeOut(); return false;">FadeOut</a> || <br>     | 
+        || <a href="" onclick="zoom('MX'); return false;">Zoom to Mexico</a> | <a href="" onclick="zoomBorder(); return false;">Zoom to border</a> || <a href="" onclick="nextSection(1,20000); return false;">Transition 1</a> | <a href="" onclick="nextSection(2,40000); return false;">Transition 2</a> ||  <a href="" onclick="resize(); return false;">Resize</a> | <a href="" onclick="showPopup('btopright'); return false;">Move ArrowUp</a> | <a href="" onclick="showPopup('bbottomleft'); return false;">Move ArrowDown</a> | <a href="" onclick="showPopup('blefttop'); return false;">Move ArrowLeft</a> | <a href="" onclick="showPopup('brightbottom'); return false;">Move ArrowRight</a>  || <a href="" onclick="fadeOut(); return false;">FadeOut</a> || <br>     | 
 
 
     </div>
     
     <div id="main">
-        <div id='popup' style="display: none;"></div>
+        <div id='popup' >
+
+            <table id="bubble" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="bubbleCorner"></td>
+                    <td><img id="btopleft" src="img/top.png" style="vertical-align:bottom; margin-left:5px"></td>
+                    <td></td>
+                    <td align="right"><img id="btopright" src="img/top.png" style="vertical-align:bottom; margin-right:5px;"></td>
+                    <td class="bubbleCorner"></td>
+                </tr>
+                <tr>
+                    <td><img id="blefttop" style="margin-top:5px;" src="img/left.png"></td>
+                    <td colspan="3" rowspan="3" id="bubbleContent">Can't say much with so little code. Please post your code or, better yet, create a jsfiddle or codepen that duplicates the issue. </td>
+                    <td><img id="bleftbottom" style="margin-top:5px;" src="img/right.png"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                   
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><img id="brighttop" style="margin-bottom:5px;" src="img/left.png"></td>
+                    
+                    <td><img id="brightbottom" style="margin-bottom:5px;" src="img/right.png"></td>
+                </tr>
+                <tr>
+                    <td class="bubbleCorner"></td>
+                    <td><img id="bbottomleft" src="img/down.png" style="vertical-align:top; margin-left:5px "></td>
+                    <td></td>
+                    <td align="right"><img id="bbottomright" src="img/down.png" style="vertical-align:top; margin-right:5px"></td>
+                    <td class="bubbleCorner"></td>
+                </tr>
+            </table>
+        </div>
+
 
 
         <div id="menu">
