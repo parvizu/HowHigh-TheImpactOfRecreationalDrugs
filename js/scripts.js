@@ -348,7 +348,7 @@ $(document).ready(function() {
 
 function start()
 {
-    $('#popup').fadeOut(400);
+    //$('#popup').fadeOut(400);
     movePopup();
 }
 
@@ -1178,7 +1178,7 @@ function movePopup(x,y,w,h,text,time,arrow)
     bubbleArrows(arrow);
     if(text!='')
     {
-        $("#bubbleContent").text(text);
+        $("#bubbleContent").html(text);
     }
     $("#bubbleContent").css('wdith',w);  
     $('#popup').animate({
