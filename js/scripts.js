@@ -340,7 +340,7 @@ $(document).ready(function() {
     $.getJSON("json/mexicoCrimeTotal.json", function (data) {mexicoCrimeTotal = getValidCountries(data);});
 
     movePopup(300,200,500,300,'Please select the mode you want to use:<br><a href="" onclick="start(); showDrugs(1);  return false;">Directed</a> | <a href="" onclick="">Exploratory</a>',800);
-    $('#popup').fadeIn(1500); 
+    //$('#popup').fadeIn(1500); 
     drawBorderSeizures();
     drawLegalizeMarijuana();
 
@@ -439,7 +439,7 @@ function drawBorderMap()
             },
             name: crimeStat,
             tooltip: {
-                pointFormat: '{point.state}: {point.value}/kgs'
+                pointFormat: '{point.state}: {point.value} crimes'
             }
         }]
     });
@@ -756,7 +756,7 @@ function setFlag(code)
 //             minColor: '#E6E7E8',
 //             maxColor: '#005645'
 //         },            
-// >>>>>>> master
+
 
 
 /***** MAP ZOOMING ******/
