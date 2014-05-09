@@ -16,12 +16,12 @@
 
 </head>
 <body>
-    <div>
+    <!-- <div>
         || <a href="" onclick="zoom('MX'); return false;">Zoom to Mexico</a> | <a href="" onclick="zoomBorder(); return false;">Zoom to border</a> || <a href="" onclick="nextSection(1,20000); return false;">Transition 1</a> | <a href="" onclick="nextSection(2,40000); return false;">Transition 2</a> ||  <a href="" onclick="resize(); return false;">Resize</a> | <a href="" onclick="showPopup('btopright'); return false;">Move ArrowUp</a> | <a href="" onclick="showPopup('bbottomleft'); return false;">Move ArrowDown</a> | <a href="" onclick="showPopup('blefttop'); return false;">Move ArrowLeft</a> | <a href="" onclick="showPopup('brightbottom'); return false;">Move ArrowRight</a>  || <a href="" onclick="fadeOut(); return false;">FadeOut</a>
 
 
 
-    </div>
+    </div> -->
     
     <div id="main">
         <div id='popup' style="display: none;">
@@ -68,54 +68,63 @@
         </div>
         
         <div id="part1" >
-            <a href="" onclick="usProduction(); return false;">US Production</a> || <a href="" onclick="infographSlideshow(1); return false;">Start Infographic</a><br>
+           <!--  <a href="" onclick="usProduction(); return false;">US Production</a> || <a href="" onclick="infographSlideshow(1); return false;">Start Infographic</a><br> -->
             
 
-            <div id="useTop" style="overflow: 0 auto;">
+            <div id="useTop" align="center">
                 <div id="infograph">
-                    <img id="info1" style="width:1100px;" src="img/isotype01M.png">
-                    <img id="info2" style="width:1100px;" src="img/isotype02M.png">
-                    <img id="info3" style="width:1100px;" src="img/isotype03M.png">
-                    <img id="info4" style="width:1100px;" src="img/isotype04M.png">
+                    <img id="info1" style="width:900px;" src="img/isotype01M.png">
+                    <img id="info2" style="width:900px;" src="img/isotype02M.png">
+                    <img id="info3" style="width:900px;" src="img/isotype03M.png">
+                    <img id="info4" style="width:900px;" src="img/isotype04M.png">
+                </div>
+                
+                
+                <div id="rightInfo">
+                    <div id="usMap" style="width: 600px; display: inline-block; display:;" ></div><br>
+
+                    <img id="infoAll" src="img/people.png" style="width:600px; height:140px; display:none;">
                 </div>
                 <div id="borderSeizures"></div>
-                <div id="usMap" style="width: 600px; display: inline-block; display:;" ></div>
-            </div>
-            <div id="useBottom">
-                <div id="leftInfo"></div>
-                <div id="rightInfo">
-                    
-                </div>
-            </div>    
+            </div>   
         </div>
 
-        <div id="part2" style="display:none;">
-            <div id="trend-chart" style="width: 800px; height:200px; display: inline-block;"></div>
-            <div id="mexCrimeList" style="width: 300px; height:200px; display: inline-block;margin-left: 20px">
-                <table class="flat-table flat-table-1">
-                    <thead>
-                        <th>State</th>
-                        <th>Crimes</th>
-                    </thead>                    
-                    <tbody id='mexCrimerankings'>
-                        <tr>
-                            <td>Edo Mexico</td>
-                            <td>1000</td>
-                        </tr>
-                        <tr>
-                            <td>Edu Mexico</td>
-                            <td>800</td>
-                        </tr>                        
-                    </tbody>
-                </table>
-            </div>            
-            <div id="part2-pane" style="width: 300px; height:600px; display: inline-block">
-            </div>
-            <div style="height:600px; display: inline-block">
-                <div id="part2-opts" style="width: 200px; display: inline-block;">
-                    <a href="" onclick="mexCrimes(3); return false;">Assaults</a>  | <a href="" onclick="mexCrimes(2); return false;">Extortions</a> | <a href="" onclick="mexCrimes(4); return false;">Homicides</a> | <a href="" onclick="mexCrimes(5); return false;">Kidnappings</a> | <a href="" onclick="mexCrimes(6); return false;">Total Crimes</a>
-                </div>                        
-                <div id="borderMap"></div>
+        <div id="part2" style="display:none; width:1000px; vertical-align:top;" align="center">
+            <div id="trend-chart" style="width:100%;height:130px;"></div>
+               
+            <div>
+                
+                <div style="height:600px; display: inline-block">
+                    
+                    <div id="insightsMx" style="display:inline-block; vertical-align:top;">
+                        <div id="part2-opts">
+                            <a href="" onclick="mexCrimes(3); return false;">Assaults</a>  | <a href="" onclick="mexCrimes(2); return false;">Extortions</a> | <a href="" onclick="mexCrimes(4); return false;">Homicides</a> | <a href="" onclick="mexCrimes(5); return false;">Kidnappings</a> | <a href="" onclick="mexCrimes(6); return false;">All Crimes</a>
+                        </div> 
+                        <div id="borderMap" style=" vertical-align:top;"></div> 
+                    </div>
+                                      
+                    <div id="mexCrimeList" style="display: inline-block;margin-left: 20px">
+                        <table class="flat-table flat-table-1">
+                            <thead>
+                                <th style="width:150px;">State</th>
+                                <th>Crimes</th>
+                            </thead>                    
+                            <tbody id='mexCrimerankings'>
+                                <tr>
+                                    <td>Edo Mexico</td>
+                                    <td>1000</td>
+                                </tr>
+                                <tr>
+                                    <td>Edu Mexico</td>
+                                    <td>800</td>
+                                </tr>                        
+                            </tbody>
+                        </table>
+                    </div> 
+
+                </div>
+                           
+                
             </div>
         </div>
 
