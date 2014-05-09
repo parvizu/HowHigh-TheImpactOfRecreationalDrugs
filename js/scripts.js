@@ -310,19 +310,19 @@ var crimeRankings ={
 
 var crimeTrends = [
       {
-      color: '#00DD22',
+      color: '#57DE62',
       name: 'Extortions',
       data: [1910, 2416, 2979, 3157, 3123, 4869, 6332, 6105, 4582, 7272, 7833]}, 
       {
-      color: '#FFCC00',
+      color: '#D61C1C',
       name: 'Assaults',
       data: [2184, 2079, 2136, 2092, 3229, 3482, 5424, 5459, 5797, 5768, 5923]},
       {
-      color: '#FFBBAA',
+      color: '#5E6DDB',
       name: 'Homicides',
       data: [3006, 2858, 3208, 3610, 4040, 5085, 8804, 12423, 12967, 11122, 9928]}, 
       {
-      color: '#CC66BB',
+      color: '#E8CF02',
       name: 'Kidnappings',
       data: [413, 323, 278, 733, 438, 907, 1162, 1219, 1424, 1414, 1699]} 
 
@@ -359,7 +359,7 @@ $(document).ready(function() {
 
     $.getJSON("json/bubbleInstructions.json", function (data) {track = data;});
 
-    movePopup(300,200,500,300,'Please select the mode you want to use:<br><br><br><a style="margin-left:100px"href="" onclick="start(); showDrugs(1);  return false;">Directed</a> | <a href="" onclick="">Exploratory</a>',800);
+    movePopup(300,200,500,300,'Please select the mode you want to use:<br><br><br><button class="minimal" style="margin-left:80px"href="" onclick="start(); showDrugs(1);  return false;">Directed</button> | <button class="minimal" href="" class="clean-gray" onclick="">Exploratory</button>',800);
     //$('#popup').fadeIn(1500); 
     // drawBorderSeizures();
     // drawLegalizeMarijuana();
@@ -508,7 +508,8 @@ function drawBorderMap()
                 },            
             tooltip: {
                 pointFormat: '{point.state}: {point.value} crimes'
-            }
+            },
+            credits: {enabled:false}
         }]
     });
     
@@ -570,7 +571,8 @@ function usProduction() {
             name: 'Production:',
             tooltip: {
                 pointFormat: '{point.state}: {point.value} kgs'
-            }
+            },
+            credits: {enabled:false}
         }]
     });
 };
@@ -868,7 +870,8 @@ function drawCrimeTrends(trendData) {
             borderWidth: 0
         }
     },
-    series: trendData
+    series: trendData,
+    credits: {enabled:false}
     });
 };
 
@@ -1429,14 +1432,13 @@ function showPart(num)
             $("#part2").show();
             $("#part3").hide();
             mexCrimes(6);
-            console.log('I called you')
-            // drawCrimeTrends(crimeTrends);
             break;
 
         case 3:
             $("#part1").hide();
             $("#part2").hide();
             $("#part3").show();
+            showDrugs(1)
             break;
 
         default:
