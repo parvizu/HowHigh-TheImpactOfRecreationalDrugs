@@ -339,8 +339,8 @@ $(document).ready(function() {
     $.getJSON("json/mexicoCrimeKidnappings.json", function (data) {mexicoCrimeKidnappings = getValidCountries(data);});
     $.getJSON("json/mexicoCrimeTotal.json", function (data) {mexicoCrimeTotal = getValidCountries(data);});
 
-    //movePopup(300,200,500,300,'Please select the mode you want to use:<br><a href="" onclick="start(); showDrugs(1);  return false;">Directed</a> | <a href="" onclick="">Exploratory</a>',800);
-    //$('#popup').fadeIn(1500); 
+    movePopup(300,200,500,300,'Please select the mode you want to use:<br><a href="" onclick="start(); showDrugs(1);  return false;">Directed</a> | <a href="" onclick="">Exploratory</a>',800);
+    $('#popup').fadeIn(1500); 
     drawBorderSeizures();
     drawLegalizeMarijuana();
 
@@ -1148,16 +1148,17 @@ function resize()
     }, 2000,function(){})
 }
 
-function showPopup()
+function showPopup(arrow)
 {
     //console.log((Math.random() * 600) + 1);
     var x = ((Math.random() * 600) +1);
     var y = ((Math.random() * 400) +1);
     
-    $('#popup').animate({
-        left:100+x+"px",
-        top: y+"px",
-    },400, function(){});
+    movePopup(x,y,200,200,'',400,arrow);
+    // $('#popup').animate({
+    //     left:100+x+"px",
+    //     top: y+"px",
+    // },400, function(){});
 }
 
 function fadeOut()
@@ -1171,15 +1172,37 @@ function fadeIn(element)
     //$('#container').fadeIn(1000);   
 }
 
-function movePopup(x,y,w,h,text,time)
+function movePopup(x,y,w,h,text,time,arrow)
 {
 
+    bubbleArrows(arrow);
+    if(text!='')
+    {
+        $("#bubbleContent").text(text);
+    }
+    $("#bubbleContent").css('wdith',w);  
     $('#popup').animate({
-        left: x,
-        top: y,
-        width: w,
-        height: h
-    },time,function() { $('#popup').html(text);});
+        left:100+x+"px",
+        top: y+"px",
+    },time);
+}
+
+function bubbleArrows(arrow)
+{
+    $("#btopright").css('opacity','0');
+    $("#btopleft").css('opacity','0');
+    $("#brighttop").css('opacity','0');
+    $("#brightbottom").css('opacity','0');
+    $("#blefttop").css('opacity','0');
+    $("#bleftbottom").css('opacity','0');
+    $("#bbottomleft").css('opacity','0');
+    $("#bbottomright").css('opacity','0');
+
+    console.log(arrow);
+    if(arrow)
+    {
+        $("#"+arrow).css('opacity','.6');
+    }
 }
 
 
