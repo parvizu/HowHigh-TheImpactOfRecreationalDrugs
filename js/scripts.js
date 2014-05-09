@@ -491,9 +491,11 @@ function usProduction() {
     // Instantiate the map
     $('#usMap').highcharts2('Map', {
         title : {
+            text : null
+        },
+        subtitle : {
             text : 'US Drug Production by State'
         },
-
         mapNavigation: {
             enabled: true,
             buttonOptions: {
@@ -1253,7 +1255,7 @@ function movePopup(x,y,w,h,text,time,arrow)
     {
         $("#bubbleContent").html(text);
     }
-    $("#bubbleContent").css('wdith',w);  
+    $("#bubbleContent").css('width',w);  
     $('#popup').animate({
         left:100+x+"px",
         top: y+"px",
@@ -1286,6 +1288,9 @@ function drawBorderSeizures()
                 type: 'column'
             },
             title: {
+                text: null
+            },
+            subtitle: {
                 text: 'Percentage of Drug seizures in US Borders'
             },
             xAxis: {
@@ -1513,10 +1518,18 @@ function nextSection(sect,time)
 
 function infographSlideshow(num)
 {  
+    var text = ['This represents the entire US population',
+                '48% of all Americans have used illegal drugs in their lifetime',
+                '16% have used drugs in the past year',
+                '9.2% have used drugs in the past month'];
+    var leftPos = [0, 0, 300, 650,870,950]
+    console.log(num)
     var id = "#info"+num++;
     $(id).fadeIn(3000);
     if(num <= 5)
-    {
+    {   
+        
+        movePopup(leftPos[num],(150 + ((num-2)*57)),270,70,text[num-2],3000,'btopleft')
         setTimeout(function() {
             console.log(id);
             infographSlideshow(num);
@@ -1536,11 +1549,13 @@ function infographSlideshow(num)
 
         setTimeout(function(){
             // $("#infograph").css('height','100px');
+            movePopup(640,400,200,30,'Marijuana Production by State',3000,'brighttop')
             usProduction();
         },3000)
 
         setTimeout(function(){
             drawBorderSeizures();
+            movePopup(120,145,220,50,'% Drug seizures along borders',3000,'bbottomleft')
         },10000);
     }
 }
