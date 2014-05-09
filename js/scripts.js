@@ -309,6 +309,25 @@ var crimeRankings ={
     }
 }
 
+var crimeTrends = [
+      {
+      color: '#00DD22',
+      name: 'Extortions',
+      data: [1910, 2416, 2979, 3157, 3123, 4869, 6332, 6105, 4582, 7272, 7833]}, 
+      {
+      color: '#FFCC00',
+      name: 'Assaults',
+      data: [2184, 2079, 2136, 2092, 3229, 3482, 5424, 5459, 5797, 5768, 5923]},
+      {
+      color: '#FFBBAA',
+      name: 'Homicides',
+      data: [3006, 2858, 3208, 3610, 4040, 5085, 8804, 12423, 12967, 11122, 9928]}, 
+      {
+      color: '#CC66BB',
+      name: 'Kidnappings',
+      data: [413, 323, 278, 733, 438, 907, 1162, 1219, 1424, 1414, 1699]} 
+
+    ];
 
 $(document).ready(function() {
     $.getJSON("json/RankingMarijuana.json", function(data) {countryRankings['marijuana'] = data;});
@@ -352,10 +371,19 @@ function start()
     movePopup();
 }
 
-function worldCrime(option)
+function getCrime(crimeName) {
+    // console.log(crimeName);
+    var crimeNames = ['Extortions','Assaults','Homicides','Kidnappings'];
+    mexCrimes((jQuery.inArray(crimeName, crimeNames)+2));
+}
+
+function mexCrimes(option)
 {
-    var file;
-    if (option !=1) {file = "json/mexico.json";}
+    var file,trendNum,trendPass=[];
+    if (option !=1) {
+        file = "json/mexico.json";
+        trendNum = option-2;
+    }
     switch(option)
     {
         case 1: 
@@ -364,30 +392,33 @@ function worldCrime(option)
             break;
         case 2: 
             mexCrime = mexicoCrimeExtortions;
-            crimeStat = 'Extortions'
+            crimeStat = 'Extortions';
             break;
         case 3: 
             mexCrime = mexicoCrimeAssaults;
-            crimeStat = 'Assaults'
+            crimeStat = 'Assaults';
             break;
         case 4:
             mexCrime = mexicoCrimeHomicides
-            crimeStat = 'Homicides'
+            crimeStat = 'Homicides';
             break;
         case 5:
             mexCrime = mexicoCrimeKidnappings
-            crimeStat = 'Kidnappings'
+            crimeStat = 'Kidnappings';
             break;
         case 6:
             mexCrime = mexicoCrimeTotal;
-            crimeStat = 'Total Crimes'
+            crimeStat = 'Total Crimes';
             break;
 
     }
-
     $.getJSON(file,function(data){ 
+        trendPass.push(crimeTrends[trendNum])
+        if (option == 6) {trendPass =crimeTrends}            
         borderMap = data;
         drawBorderMap();
+        drawCrimeTrends(trendPass)
+        //mexCrimes(trendPass);
     });
     
 }
@@ -397,8 +428,11 @@ function drawBorderMap()
     // Instantiate the map
     $('#borderMap').highcharts2('Map', {
         title : {
-            text : 'Drug Related ' + crimeStat + ' by Mexican State'
+            text : null
         },
+        subtitle : {
+            text : 'Drug Related ' + crimeStat + ' by Mexican State'
+        },        
         mapNavigation: {
             enabled: true,
             buttonOptions: {
@@ -408,7 +442,7 @@ function drawBorderMap()
 
         colorAxis: {
             min: 1,
-            type: 'logarithmic',
+            //type: 'logarithmic',
             minColor: '#E6E7E8',
             maxColor: '#005645'
         },            
@@ -439,9 +473,14 @@ function drawBorderMap()
             },
             name: crimeStat,
             tooltip: {
-                pointFormat: '{point.state}: {point.value}/kgs'
+                pointFormat: '{point.state}: {point.value}'
             }
         }]
+    });
+    
+    $('#mexCrimerankings tr').remove();
+    $.each(mexCrime, function(index, data) {
+        if (data.state) {$('#mexCrimerankings').append('<tr><td>' + data.state + '</td><td>' + data.value + '</td></tr>');}
     });
 }
 
@@ -729,6 +768,65 @@ function drawBottomGraph(code, country)
             }]
     });
 }
+
+function drawCrimeTrends(trendData) {
+      $('#trend-chart').highcharts({
+        chart: {
+          type: 'line'
+      },
+      title: {
+          text: null
+      },
+      subtitle: {
+          text: 'Drug Related Violent Crimes in Mexico'
+      },      
+      xAxis: {
+          title: {
+            text: null
+        },
+        categories: [
+        '2003',
+        '2004',
+        '2005',
+        '2006',
+        '2007',
+        '2008',
+        '2009',
+        '2010',
+        '2011',
+        '2012',
+        '2013'
+        ]
+    },
+    yAxis: {
+      min: 0,
+          // max: 100,
+          title: {
+            text: 'Numbers'
+        }
+    },
+    tooltip: {
+      headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+      pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+      footerFormat: '</table>',
+      shared: false,
+      useHTML: true
+    },
+    plotOptions: {
+        series: {
+            cursor: 'pointer',
+            events: {
+               click: function(event) {getCrime(this.name);}
+            }
+        },
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: trendData
+    });
+};
 
 function setFlag(code)
 {
@@ -1255,7 +1353,7 @@ function drawBorderSeizures()
 }
 
 
-/******************* OVERAL CONTROLS *********************/
+/******************* OVERALL CONTROLS *********************/
 
 function showPart(num)
 {
@@ -1272,6 +1370,9 @@ function showPart(num)
             $("#part1").hide();
             $("#part2").show();
             $("#part3").hide();
+            mexCrimes(6);
+            console.log('I called you')
+            // drawCrimeTrends(crimeTrends);
             break;
 
         case 3:
@@ -1408,8 +1509,3 @@ function nextSection(sect,time)
             ;
 
 }
-
-
-
-
-

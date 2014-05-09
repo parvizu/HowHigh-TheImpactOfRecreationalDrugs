@@ -35,18 +35,41 @@
         </div>
         
         <div id="part1" >
+            <a href="" onclick="mexCrimes(1); return false;">US Production</a> | 
             <div id="usMap" style="width: 600px; height:400px; display: inline-block; display:;" ></div>    
+            <div id="borderSeizures"></div>
+            <div id="legalize"></div>
         </div>
 
         <div id="part2" style="display:none;">
-            <a href="" onclick="worldCrime(1); return false;">US Production</a> | <a href="" onclick="worldCrime(2); return false;">Mexico Assaults</a> | <a href="" onclick="worldCrime(3); return false;">Mexico Extortions</a> | <a href="" onclick="worldCrime(4); return false;">Mexico Homicides</a> | <a href="" onclick="worldCrime(4); return false;">Mexico Kidnappings</a> | <a href="" onclick="worldCrime(4); return false;">Mexico Total Crimes</a>
-            <div id="borderMap" ></div>
-            <div id="borderSeizures"></div>
-            <div id="legalize"></div>
-            <div id="borderMap" style="display:;"></div>
+            <div id="trend-chart" style="width: 800px; height:200px; display: inline-block;"></div>
+            <div id="mexCrimeList" style="width: 300px; height:200px; display: inline-block;margin-left: 20px">
+                <table class="flat-table flat-table-1">
+                    <thead>
+                        <th>State</th>
+                        <th>Crimes</th>
+                    </thead>                    
+                    <tbody id='mexCrimerankings'>
+                        <tr>
+                            <td>Edo Mexico</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>Edu Mexico</td>
+                            <td>800</td>
+                        </tr>                        
+                    </tbody>
+                </table>
+            </div>            
+            <div id="part2-pane" style="width: 300px; height:600px; display: inline-block">
+            </div>
+            <div style="height:600px; display: inline-block">
+                <div id="part2-opts" style="width: 200px; display: inline-block;">
+                    <a href="" onclick="mexCrimes(3); return false;">Assaults</a>  | <a href="" onclick="mexCrimes(2); return false;">Extortions</a> | <a href="" onclick="mexCrimes(4); return false;">Homicides</a> | <a href="" onclick="mexCrimes(5); return false;">Kidnappings</a> | <a href="" onclick="mexCrimes(6); return false;">Total Crimes</a>
+                </div>                        
+                <div id="borderMap"></div>
+            </div>
         </div>
-
-
 
         <div id="part3"  style="display:none;">
             <div id="topRow">

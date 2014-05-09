@@ -1,162 +1,194 @@
 [
   {
-    "code":"AGU",
-    "state":"Aguascalientes",
-    "value":42
-  },
-  {
-    "code":"BCN",
-    "state":"Baja California",
-    "value":349
-  },
-  {
-    "code":"BCS",
-    "state":"Baja California Sur",
-    "value":123
-  },
-  {
-    "code":"CAM",
-    "state":"Campeche",
-    "value":84
-  },
-  {
-    "code":"CHP",
-    "state":"Chiapas",
-    "value":151
-  },
-  {
-    "code":"CHH",
-    "state":"Chihuahua",
-    "value":161
-  },
-  {
-    "code":"COA",
-    "state":"Coahuila",
-    "value":104
-  },
-  {
-    "code":"COL",
-    "state":"Colima",
-    "value":27
+    "code":"MEX",
+    "state":"Edo Mexico",
+    "value":1668,
+    "ranking":1
   },
   {
     "code":"DIF",
     "state":"Federal District",
-    "value":965
-  },
-  {
-    "code":"DUR",
-    "state":"Durango",
-    "value":82
-  },
-  {
-    "code":"MEX",
-    "state":"Edo Mexico",
-    "value":1668
-  },
-  {
-    "code":"GUA",
-    "state":"Guanajuato",
-    "value":468
-  },
-  {
-    "code":"GRO",
-    "state":"Guerrero",
-    "value":174
-  },
-  {
-    "code":"HID",
-    "state":"Hidalgo",
-    "value":126
+    "value":965,
+    "ranking":2
   },
   {
     "code":"JAL",
     "state":"Jalisco",
-    "value":790
+    "value":790,
+    "ranking":3
   },
   {
-    "code":"MIC",
-    "state":"Michoacán",
-    "value":256
+    "code":"GUA",
+    "state":"Guanajuato",
+    "value":468,
+    "ranking":4
   },
   {
     "code":"MOR",
     "state":"Morelos",
-    "value":400
+    "value":400,
+    "ranking":5
   },
   {
-    "code":"NAY",
-    "state":"Nayarit",
-    "value":0
+    "code":"BCN",
+    "state":"Baja California",
+    "value":349,
+    "ranking":6
   },
   {
     "code":"NLE",
     "state":"Nuevo León",
-    "value":285
-  },
-  {
-    "code":"OAX",
-    "state":"Oaxaca",
-    "value":173
+    "value":285,
+    "ranking":7
   },
   {
     "code":"PUE",
     "state":"Puebla",
-    "value":258
+    "value":258,
+    "ranking":8
   },
   {
-    "code":"QUE",
-    "state":"Querétaro",
-    "value":15
-  },
-  {
-    "code":"ROO",
-    "state":"Quintana Roo",
-    "value":204
-  },
-  {
-    "code":"SLP",
-    "state":"San Luis Potosí",
-    "value":119
-  },
-  {
-    "code":"SIN",
-    "state":"Sinaloa",
-    "value":113
-  },
-  {
-    "code":"SON",
-    "state":"Sonora",
-    "value":34
-  },
-  {
-    "code":"TAB",
-    "state":"Tabasco",
-    "value":188
+    "code":"MIC",
+    "state":"Michoacán",
+    "value":256,
+    "ranking":9
   },
   {
     "code":"TAM",
     "state":"Tamaulipas",
-    "value":225
+    "value":225,
+    "ranking":10
   },
   {
-    "code":"TLA",
-    "state":"Tlaxcala",
-    "value":0
+    "code":"ROO",
+    "state":"Quintana Roo",
+    "value":204,
+    "ranking":11
+  },
+  {
+    "code":"TAB",
+    "state":"Tabasco",
+    "value":188,
+    "ranking":12
+  },
+  {
+    "code":"GRO",
+    "state":"Guerrero",
+    "value":174,
+    "ranking":13
+  },
+  {
+    "code":"OAX",
+    "state":"Oaxaca",
+    "value":173,
+    "ranking":14
+  },
+  {
+    "code":"CHH",
+    "state":"Chihuahua",
+    "value":161,
+    "ranking":15
+  },
+  {
+    "code":"CHP",
+    "state":"Chiapas",
+    "value":151,
+    "ranking":16
+  },
+  {
+    "code":"HID",
+    "state":"Hidalgo",
+    "value":126,
+    "ranking":17
+  },
+  {
+    "code":"BCS",
+    "state":"Baja California Sur",
+    "value":123,
+    "ranking":18
+  },
+  {
+    "code":"SLP",
+    "state":"San Luis Potosí",
+    "value":119,
+    "ranking":19
+  },
+  {
+    "code":"SIN",
+    "state":"Sinaloa",
+    "value":113,
+    "ranking":20
+  },
+  {
+    "code":"COA",
+    "state":"Coahuila",
+    "value":104,
+    "ranking":21
   },
   {
     "code":"VER",
     "state":"Veracruz",
-    "value":101
+    "value":101,
+    "ranking":22
+  },
+  {
+    "code":"CAM",
+    "state":"Campeche",
+    "value":84,
+    "ranking":23
   },
   {
     "code":"YUC",
     "state":"Yucatán",
-    "value":83
+    "value":83,
+    "ranking":24
+  },
+  {
+    "code":"DUR",
+    "state":"Durango",
+    "value":82,
+    "ranking":25
   },
   {
     "code":"ZAC",
     "state":"Zacatecas",
-    "value":65
+    "value":65,
+    "ranking":26
+  },
+  {
+    "code":"AGU",
+    "state":"Aguascalientes",
+    "value":42,
+    "ranking":27
+  },
+  {
+    "code":"SON",
+    "state":"Sonora",
+    "value":34,
+    "ranking":28
+  },
+  {
+    "code":"COL",
+    "state":"Colima",
+    "value":27,
+    "ranking":29
+  },
+  {
+    "code":"QUE",
+    "state":"Querétaro",
+    "value":15,
+    "ranking":30
+  },
+  {
+    "code":"NAY",
+    "state":"Nayarit",
+    "value":0,
+    "ranking":31
+  },
+  {
+    "code":"TLA",
+    "state":"Tlaxcala",
+    "value":0,
+    "ranking":32
   }
 ]
