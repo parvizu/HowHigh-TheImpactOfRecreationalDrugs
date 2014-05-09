@@ -1487,11 +1487,11 @@ function infographSlideshow(num)
             $('#info1').hide();
             $('#info2').hide();
             $('#info3').hide();
-            $("#info4").css("border-radius","3px");
+            //$("#info4").css("border-radius","3px");
         },2500);
 
         setTimeout(function(){
-            $("#infograph").css('height','100px');
+            // $("#infograph").css('height','100px');
             usProduction();
         },3000)
 

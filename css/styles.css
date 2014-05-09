@@ -171,15 +171,18 @@
 	vertical-align: middle;
 }
 
-.placeholder img
+/*.placeholder img
 {
 	vertical-align: middle;
-}
+}*/
 
 #infograph
 {
 	/*height:500px;*/
-	width: 1120px;
+	width: 1105px;
+	background-color: black;
+	border-radius: 4px;
+	padding:5px;
 
 }
 
