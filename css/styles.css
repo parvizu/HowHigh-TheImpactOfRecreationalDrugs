@@ -34,7 +34,7 @@
 
 #borderMap 
 {
-	height: 450px;
+	height: 550px;
 	width:600px;
 }
 
@@ -52,7 +52,7 @@
 
 #left
 {
-	width:100px;
+	width:120px;
 	vertical-align: top;
 
 }
@@ -151,7 +151,7 @@
 	/*background: #336ca6;*/
 }
 .flat-table-1 tr:hover {
-	background: rgba(0,0,0,0.2);
+	background: #EEDD66;
 }
 .flat-table-2 tr:hover {
 	background: rgba(0,0,0,0.2);
@@ -286,3 +286,34 @@
 	z-index: 8;
 	display: none;
 }
+
+/* Button Style*******************************************************************************/
+button.minimal {
+  background: #e3e3e3;
+  border: 1px solid #bbb;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 1px 1px #f6f6f6;
+  -moz-box-shadow: inset 0 0 1px 1px #f6f6f6;
+  box-shadow: inset 0 0 1px 1px #f6f6f6;
+  color: #333;
+  font: bold 12px "helvetica neue", helvetica, arial, sans-serif;
+  line-height: 1;
+  padding: 8px 0 9px;
+  text-align: center;
+  text-shadow: 0 1px 0 #fff;
+  width: 120px; }
+  button.minimal:hover {
+    background: #d9d9d9;
+    -webkit-box-shadow: inset 0 0 1px 1px #eaeaea;
+    -moz-box-shadow: inset 0 0 1px 1px #eaeaea;
+    box-shadow: inset 0 0 1px 1px #eaeaea;
+    color: #222;
+    cursor: pointer; }
+  button.minimal:active {
+    background: #d0d0d0;
+    -webkit-box-shadow: inset 0 0 1px 1px #e3e3e3;
+    -moz-box-shadow: inset 0 0 1px 1px #e3e3e3;
+    box-shadow: inset 0 0 1px 1px #e3e3e3;
+    color: #000; }

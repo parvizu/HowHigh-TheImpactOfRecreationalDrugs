@@ -310,19 +310,19 @@ var crimeRankings ={
 
 var crimeTrends = [
       {
-      color: '#00DD22',
+      color: '#57DE62',
       name: 'Extortions',
       data: [1910, 2416, 2979, 3157, 3123, 4869, 6332, 6105, 4582, 7272, 7833]}, 
       {
-      color: '#FFCC00',
+      color: '#D61C1C',
       name: 'Assaults',
       data: [2184, 2079, 2136, 2092, 3229, 3482, 5424, 5459, 5797, 5768, 5923]},
       {
-      color: '#FFBBAA',
+      color: '#5E6DDB',
       name: 'Homicides',
       data: [3006, 2858, 3208, 3610, 4040, 5085, 8804, 12423, 12967, 11122, 9928]}, 
       {
-      color: '#CC66BB',
+      color: '#E8CF02',
       name: 'Kidnappings',
       data: [413, 323, 278, 733, 438, 907, 1162, 1219, 1424, 1414, 1699]} 
 
@@ -359,7 +359,7 @@ $(document).ready(function() {
 
     $.getJSON("json/bubbleInstructions.json", function (data) {track = data;});
 
-    movePopup(300,200,500,300,'Please select the mode you want to use:<br><br><br><a style="margin-left:100px"href="" onclick="start(); showDrugs(1);  return false;">Directed</a> | <a href="" onclick="">Exploratory</a>',800);
+    movePopup(300,200,500,300,'Please select the mode you want to use:<br><br><br><button class="minimal" style="margin-left:80px"href="" onclick="start(); showDrugs(1);  return false;">Directed</button> | <button class="minimal" href="" class="clean-gray" onclick="">Exploratory</button>',800);
     //$('#popup').fadeIn(1500); 
     // drawBorderSeizures();
     // drawLegalizeMarijuana();
@@ -473,7 +473,10 @@ function drawBorderMap()
                     }
                 }
             },
-        },            
+        },
+        credits: {
+            enabled: false
+        },                    
         series : [{
             animation: true,
             data : mexCrime,
@@ -492,7 +495,18 @@ function drawBorderMap()
             name: crimeStat,
                 point: {
                     events: {
-                        mouseOver: function() {console.log(this.code);}
+                        mouseOver: function() {$('#'+this.code)[0].style.backgroundColor = "#EEDD66";},
+                    
+                        mouseOut: function() {
+                            if($('#'+this.code)[0].rowIndex % 2 == 0)
+                            {
+                              $('#'+this.code)[0].style.backgroundColor = "rgba(0,0,0,0)";
+                            }
+                            else
+                            {
+                              $('#'+this.code)[0].style.backgroundColor = "#BCC6CC";
+                            }                            
+                        }
                     }
                 },            
             tooltip: {
@@ -503,7 +517,7 @@ function drawBorderMap()
     
     $('#mexCrimerankings tr').remove();
     $.each(mexCrime, function(index, data) {
-        if (data.state) {$('#mexCrimerankings').append('<tr><td>' + data.state + '</td><td>' + data.value + '</td></tr>');}
+        if (data.state) {$('#mexCrimerankings').append('<tr id=' + data.code + '><td>' + data.state + '</td><td>' + data.value + '</td></tr>');}
     });
 }
 
@@ -540,7 +554,10 @@ function usProduction() {
                     }
                 }
             }
-        },            
+        },
+        credits: {
+            enabled: false
+        },                    
         series : [{
             animation: true,
             data : usMarijuana,
@@ -642,8 +659,11 @@ function drawRanking(title,countries,values,color)
             type: 'bar'
         },
         title: {
-            text: 'Top 20 Countries'
+            text: null
         },
+        subtitle: {
+            text: 'Top 20 Countries'
+        },        
         xAxis: {
             categories: countries,
             title: {
@@ -857,7 +877,8 @@ function drawCrimeTrends(trendData) {
             borderWidth: 0
         }
     },
-    series: trendData
+    series: trendData,
+    credits: {enabled:false}
     });
 };
 
@@ -896,6 +917,9 @@ function drawScatter(scale) {
             zoomType: 'xy'
         },
         title: {
+            text: null
+        },
+        subtitle: {
             text: 'Crimes Versus Seizures'
         },
         xAxis: {
@@ -1418,14 +1442,13 @@ function showPart(num)
             $("#part2").show();
             $("#part3").hide();
             mexCrimes(6);
-            console.log('I called you')
-            // drawCrimeTrends(crimeTrends);
             break;
 
         case 3:
             $("#part1").hide();
             $("#part2").hide();
             $("#part3").show();
+            showDrugs(1)
             break;
 
         default:
@@ -1588,7 +1611,7 @@ function infographSlideshow(num)
         
         // movePopup(leftPos[num],(150 + ((num-2)*57)),270,70,text[num-2],3000,'btopleft')
         setTimeout(function() {
-            console.log(id);
+            // console.log(id);
             infographSlideshow(num);
         },5000);
     }
