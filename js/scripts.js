@@ -456,7 +456,7 @@ function drawBorderMap()
                         color: '#EEDD66'
                     }
                 }
-            }
+            },
         },            
         series : [{
             animation: true,
@@ -474,6 +474,11 @@ function drawBorderMap()
                 }
             },
             name: crimeStat,
+                point: {
+                    events: {
+                        mouseOver: function() {console.log(this.code);}
+                    }
+                },            
             tooltip: {
                 pointFormat: '{point.state}: {point.value} crimes'
             }
@@ -1558,7 +1563,7 @@ function infographSlideshow(num)
     var leftPos = [0, 0, 300, 650,870,950]
     console.log(num)
 // =======
-//     $("#infograph").fadeIn(3000);
+    $("#infograph").fadeIn(3000);
 // >>>>>>> master
     var id = "#info"+num++;
     $(id).fadeIn(3000);
