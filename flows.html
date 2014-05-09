@@ -33,9 +33,14 @@
             <div class="menuItem pathItem" id="menuPath2"></div>
             <div class="menuItem menuSection" onClick="showPart(3);return false;"></div>
         </div>
-        <div id="part1" ></div>
+        
+        <div id="part1" >
+            <div id="usMap" style="width: 600px; height:400px; display: inline-block; display:;" ></div>    
+        </div>
+
         <div id="part2" style="display:none;">
-            <a href="" onclick="worldCrime(1); return false;">US/Mex</a> | <a href="" onclick="worldCrime(2); return false;">US</a> | <a href="" onclick="worldCrime(3); return false;">Mexico</a> | <a href="" onclick="worldCrime(4); return false;">Border states</a>
+            <a href="" onclick="worldCrime(1); return false;">US Production</a> | <a href="" onclick="worldCrime(2); return false;">Mexico Assaults</a> | <a href="" onclick="worldCrime(3); return false;">Mexico Extortions</a> | <a href="" onclick="worldCrime(4); return false;">Mexico Homicides</a> | <a href="" onclick="worldCrime(4); return false;">Mexico Kidnappings</a> | <a href="" onclick="worldCrime(4); return false;">Mexico Total Crimes</a>
+            <div id="borderMap" ></div>
             <div id="borderSeizures"></div>
             <div id="legalize"></div>
             <div id="borderMap" style="display:;"></div>
@@ -78,9 +83,6 @@
             </div>
         </div>
     </div>
-
-    
-    <div id="usMap" style="width: 600px; height:400px; display: inline-block; display:;" ></div>
     
 </body>
  <script type="text/javascript" src="js/scripts.js"></script>

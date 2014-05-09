@@ -1,4 +1,5 @@
-var base,cocaine, marijuana, meth, heroin,rnkMj,rnkHer,rnkMeth,rnkCoke, borderMap,crime, bubbles=[];
+var base,cocaine, marijuana, meth, heroin,rnkMj,rnkHer,rnkMeth,rnkCoke, borderMap,crime,bubbles=[]; 
+var mexicoCrimeAssaults,mexicoCrimeExtortions,mexCrime,mexicoCrimeHomicides,mexicoCrimeKidnappings,mexicoCrimeTotal,crimeStat;
 var crimeUse, crimeTraffick,crimeTotal;
 var statflag = 0;
 var selectedCountry =['',''];
@@ -328,12 +329,21 @@ $(document).ready(function() {
     $.getJSON("json/countryCrimesUse.json", function (data) { crimeUse = data;}); 
     $.getJSON("json/countryCrimesTotal.json", function (data) { crimeTotal = getValidCountries(data);}); 
     $.getJSON("json/countrySeizuresTotal.json", function (data) { seizuresTotal = getValidCountries(data);}); 
-    $.getJSON("json/usStateProduction.json", function (data) {usMarijuana = data;usProduction(data);});
-    
-    // movePopup(300,200,500,300,'Please select the mode you want to use:<br><a href="" onclick="start(); showDrugs(1);  return false;">Directed</a> | <a href="" onclick="">Exploratory</a>',800);
-    // $('#popup').fadeIn(1500); 
+
+    $.getJSON("json/usStateProduction.json", function (data) {usMarijuana = getValidCountries(data);});
+    // $.getJSON("json/usMexProduct.json", function (data) {usMexProduct = data;});
+
+    $.getJSON("json/mexicoCrimeAssaults.json", function (data) {mexicoCrimeAssaults = getValidCountries(data);});
+    $.getJSON("json/mexicoCrimeExtortions.json", function (data) {mexicoCrimeExtortions = getValidCountries(data);});
+    $.getJSON("json/mexicoCrimeHomicides.json", function (data) {mexicoCrimeHomicides = getValidCountries(data);});
+    $.getJSON("json/mexicoCrimeKidnappings.json", function (data) {mexicoCrimeKidnappings = getValidCountries(data);});
+    $.getJSON("json/mexicoCrimeTotal.json", function (data) {mexicoCrimeTotal = getValidCountries(data);});
+
+    //movePopup(300,200,500,300,'Please select the mode you want to use:<br><a href="" onclick="start(); showDrugs(1);  return false;">Directed</a> | <a href="" onclick="">Exploratory</a>',800);
+    //$('#popup').fadeIn(1500); 
     drawBorderSeizures();
     drawLegalizeMarijuana();
+
 });
 
 function start()
@@ -345,19 +355,32 @@ function start()
 function worldCrime(option)
 {
     var file;
+    if (option !=1) {file = "json/mexico.json";}
     switch(option)
     {
         case 1: 
-            file = "json/usmexico.json";
+            // file = "json/usmexico.json";
+            usProduction()
             break;
         case 2: 
-            file = "json/usstates.json";
+            mexCrime = mexicoCrimeExtortions;
+            crimeStat = 'Extortions'
             break;
         case 3: 
-            file = "json/mexicostates.json";
+            mexCrime = mexicoCrimeAssaults;
+            crimeStat = 'Assaults'
             break;
         case 4:
-            file = "json/borderStates.json";
+            mexCrime = mexicoCrimeHomicides
+            crimeStat = 'Homicides'
+            break;
+        case 5:
+            mexCrime = mexicoCrimeKidnappings
+            crimeStat = 'Kidnappings'
+            break;
+        case 6:
+            mexCrime = mexicoCrimeTotal;
+            crimeStat = 'Total Crimes'
             break;
 
     }
@@ -371,10 +394,10 @@ function worldCrime(option)
 
 function drawBorderMap()
 {
-    // Instanciate the map
+    // Instantiate the map
     $('#borderMap').highcharts2('Map', {
         title : {
-            text : 'Habitat of the Rusty Blackbird'
+            text : 'Drug Related ' + crimeStat + ' by Mexican State'
         },
         mapNavigation: {
             enabled: true,
@@ -382,45 +405,102 @@ function drawBorderMap()
                 verticalAlign: 'bottom'
             }
         },
-        subtitle : {
-            text : 'An example of a distribution map in Highcharts.<br/>' +
-                'Source: <a href="http://en.wikipedia.org/wiki/File:Euphagus_carolinus_map.svg">Wikipedia</a>.'
-        },
+
+        colorAxis: {
+            min: 1,
+            type: 'logarithmic',
+            minColor: '#E6E7E8',
+            maxColor: '#005645'
+        },            
+
         plotOptions: {
-            series: {
-                tooltip: {
-                    headerFormat: '',
-                    pointFormat: '{series.name} area'
+            map: {
+                states: {
+                    hover: {
+                        color: '#EEDD66'
+                    }
                 }
             }
-        },
-
-        legend: {
-            align: 'left',
-            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || 'rgba(255, 255, 255, 0.85)',
-            floating: true,
-            layout: 'vertical',
-            verticalAlign: 'bottom',
-            reversed: true
-        },
+        },            
         series : [{
-            type: "map",
-            enableMouseTracking: false,
-            showInLegend: false,
+            animation: true,
+            data : mexCrime,
             mapData: borderMap,
-            states: {
-                hover: {
-                    color: '#BADA55'
-                },
-            },
-            events: {
-                click: function(event) {
-                    console.log(event.point);
+            joinBy: 'code',
+            dataLabels: {
+                enabled: true,
+                color: 'white',
+                format: '{point.code}',
+                style: {
+                    fontWeight: 'bold',
+                    textShadow: '0 0 3px black',
+                    textTransform: 'uppercase'
                 }
-            } 
+            },
+            name: crimeStat,
+            tooltip: {
+                pointFormat: '{point.state}: {point.value}/kgs'
+            }
         }]
     });
 }
+
+//US PRODUCTION MAP
+/***** US Production *******/
+function usProduction() {
+    // Instantiate the map
+    // console.log(data)
+    // console.log(borderMap)
+    $('#borderMap').highcharts2('Map', {
+        title : {
+            text : 'US Drug Production by State'
+        },
+
+        mapNavigation: {
+            enabled: true,
+            buttonOptions: {
+                verticalAlign: 'bottom'
+            }
+        },
+
+        colorAxis: {
+            min: 1,
+            type: 'logarithmic',
+            minColor: '#E6E7E8',
+            maxColor: '#005645'
+        },            
+
+        plotOptions: {
+            map: {
+                states: {
+                    hover: {
+                        color: '#EEDD66'
+                    }
+                }
+            }
+        },            
+        series : [{
+            animation: true,
+            data : usMarijuana,
+            mapData: Highcharts2.maps.us,
+            joinBy: 'code',
+            dataLabels: {
+                enabled: true,
+                color: 'white',
+                format: '{point.code}',
+                style: {
+                    fontWeight: 'bold',
+                    textShadow: '0 0 3px black',
+                    textTransform: 'uppercase'
+                }
+            },
+            name: 'Production:',
+            tooltip: {
+                pointFormat: '{point.state}: {point.value}'
+            }
+        }]
+    });
+};
 
 function getValidCountries(data)
 {
@@ -655,59 +735,29 @@ function setFlag(code)
     $("#countryFlag").attr('src','http://www.geonames.org/flags/x/'+code.toLowerCase()+'.gif');
 }
 
-/***** US Production *******/
-function usProduction(data) {
-    // Instantiate the map
-    $('#usMap').highcharts2('Map', {
-        title : {
-            text : 'US Drug Production by State'
-        },
+// /***** US Production *******/
+// function usProduction(data) {
+//     // Instantiate the map
+//     $('#usMap').highcharts2('Map', {
+//         title : {
+//             text : 'US Drug Production by State'
+//         },
 
-        mapNavigation: {
-            enabled: true,
-            buttonOptions: {
-                verticalAlign: 'bottom'
-            }
-        },
+//         mapNavigation: {
+//             enabled: true,
+//             buttonOptions: {
+//                 verticalAlign: 'bottom'
+//             }
+//         },
 
-        colorAxis: {
-            min: 1,
-            type: 'logarithmic',
-            minColor: '#E6E7E8',
-            maxColor: '#005645'
-        },            
+//         colorAxis: {
+//             min: 1,
+//             type: 'logarithmic',
+//             minColor: '#E6E7E8',
+//             maxColor: '#005645'
+//         },            
+// >>>>>>> master
 
-        plotOptions: {
-            map: {
-                states: {
-                    hover: {
-                        color: '#EEDD66'
-                    }
-                }
-            }
-        },            
-        series : [{
-            animation: true,
-            data : data,
-            mapData: Highcharts2.maps.us,
-            joinBy: 'code',
-            dataLabels: {
-                enabled: true,
-                color: 'white',
-                format: '{point.code}',
-                style: {
-                    fontWeight: 'bold',
-                    textShadow: '0 0 3px black',
-                    textTransform: 'uppercase'
-                }
-            },
-            name: 'Production:',
-            tooltip: {
-                pointFormat: '{point.state}: {point.value}/kgs'
-            }
-        }]
-    });
-};
 
 /***** MAP ZOOMING ******/
 function drawScatter(scale) {
